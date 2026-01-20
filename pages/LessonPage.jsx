@@ -130,6 +130,7 @@ export default function LessonPage() {
   const [copiedCode, setCopiedCode] = useState(false);
   const [contentLang, setContentLang] = useState('en'); // Local language for lesson content
   const [contextMenu, setContextMenu] = useState(null); // { x, y } or null
+  const [editorLoaded, setEditorLoaded] = useState(false);
 
   // Handle right-click context menu
   const handleContextMenu = useCallback((e) => {
