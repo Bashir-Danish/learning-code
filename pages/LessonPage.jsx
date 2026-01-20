@@ -9,7 +9,9 @@ import {
 } from 'lucide-react';
 import { useProgress } from '../contexts/ProgressContext';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useIsMobile } from '../hooks/useIsMobile';
 import MarkdownRenderer from '../components/Lesson/MarkdownRenderer';
+import MobileCodeEditor from '../components/Lesson/MobileCodeEditor';
 import AlgorithmDebugger, { lessonsWithDebugger } from '../components/Debugger/AlgorithmDebugger';
 import { getLesson } from '../data/lessons';
 import { getExercise } from '../data/exercises';
@@ -117,6 +119,7 @@ export default function LessonPage() {
   const { lessonId } = useParams();
   const { isLessonComplete, markLessonComplete, isExerciseComplete, markExerciseComplete } = useProgress();
   const { t, isRTL, language } = useLanguage();
+  const isMobile = useIsMobile();
   
   const lesson = getLesson(lessonId);
   const exercise = getExercise(lessonId);
