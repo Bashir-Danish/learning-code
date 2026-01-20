@@ -1,0 +1,66 @@
+﻿@import 'tailwindcss';
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-persian: 'Vazirmatn', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+/* RTL Support */
+[dir='rtl'] {
+  font-family: var(--font-persian);
+}
+
+/* Persian text class */
+.fa {
+  font-family: var(--font-persian);
+  direction: rtl;
+}
+
+/* Code blocks */
+pre {
+  @apply rounded-lg bg-gray-900 p-4 overflow-x-auto;
+}
+
+code {
+  @apply font-mono text-sm;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* Animation for visualizer */
+@keyframes highlight {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate-highlight {
+  animation: highlight 0.3s ease-in-out;
+}
+
+@keyframes swap {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-swap {
+  animation: swap 0.3s ease-in-out;
+}

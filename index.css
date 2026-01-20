@@ -1,0 +1,381 @@
+﻿@import "tailwindcss";
+
+/* Custom theme colors for Tailwind v4 */
+@theme {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+}
+
+/* Night-friendly color scheme - darker for comfortable night reading */
+:root {
+  --bg-main: #c8ccd4;
+  --bg-card: #d0d4dc;
+  --bg-accent: #b8bcc4;
+  --text-primary: #1a202c;
+  --text-secondary: #2d3748;
+  --border-color: #a0a4ac;
+}
+
+/* Apply darker background colors */
+body {
+  background-color: var(--bg-main);
+}
+
+/* Darker backgrounds for cards */
+.bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+/* Darker gray-50 backgrounds */
+.bg-gray-50 {
+  background-color: var(--bg-main) !important;
+}
+
+/* Darker gray-100 backgrounds */
+.bg-gray-100 {
+  background-color: var(--bg-accent) !important;
+}
+
+/* Darker borders */
+.border-gray-200 {
+  border-color: var(--border-color) !important;
+}
+
+.border-gray-100 {
+  border-color: #b0b4bc !important;
+}
+
+/* Accordion backgrounds - darker gradients */
+.from-primary-50 {
+  --tw-gradient-from: #c8cce0 !important;
+}
+
+.to-indigo-50 {
+  --tw-gradient-to: #c4c8dc !important;
+}
+
+.from-green-50 {
+  --tw-gradient-from: #c4d8cc !important;
+}
+
+.to-emerald-50 {
+  --tw-gradient-to: #c0d4c8 !important;
+}
+
+.from-yellow-50 {
+  --tw-gradient-from: #dcd8c4 !important;
+}
+
+.to-amber-50 {
+  --tw-gradient-to: #d8d4c0 !important;
+}
+
+.from-red-50 {
+  --tw-gradient-from: #dcc8c8 !important;
+}
+
+.to-rose-50 {
+  --tw-gradient-to: #d8c4c4 !important;
+}
+
+.from-purple-50 {
+  --tw-gradient-from: #d4c8dc !important;
+}
+
+.to-violet-50 {
+  --tw-gradient-to: #d0c4d8 !important;
+}
+
+.from-blue-50 {
+  --tw-gradient-from: #c8d4dc !important;
+}
+
+.to-cyan-50 {
+  --tw-gradient-to: #c4d0d8 !important;
+}
+
+/* Darker hover states */
+.hover\:bg-gray-50:hover {
+  background-color: #bcc0c8 !important;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: #b0b4bc !important;
+}
+
+.hover\:bg-white\/50:hover {
+  background-color: rgba(200, 204, 212, 0.5) !important;
+}
+
+/* Softer shadows for dark theme */
+.shadow-sm {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.18), 0 4px 6px -2px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Header darker */
+header.bg-white {
+  background-color: #bcc0c8 !important;
+}
+
+/* Sidebar darker */
+aside.bg-white {
+  background-color: #c4c8d0 !important;
+}
+
+/* White backgrounds inside accordions */
+.bg-white\/30 {
+  background-color: rgba(200, 204, 212, 0.4) !important;
+}
+
+.bg-white\/80 {
+  background-color: rgba(200, 204, 212, 0.9) !important;
+}
+
+/* Primary backgrounds darker */
+.bg-primary-50\/50 {
+  background-color: rgba(180, 184, 200, 0.5) !important;
+}
+
+.bg-primary-50 {
+  background-color: #c0c4d8 !important;
+}
+
+/* Green backgrounds darker */
+.bg-green-50 {
+  background-color: #c0d4c8 !important;
+}
+
+.bg-green-100 {
+  background-color: #b4c8bc !important;
+}
+
+/* Red backgrounds darker */
+.bg-red-50 {
+  background-color: #d4c0c0 !important;
+}
+
+.bg-red-100 {
+  background-color: #c8b4b4 !important;
+}
+
+/* Yellow backgrounds darker */
+.bg-yellow-50 {
+  background-color: #d4d0c0 !important;
+}
+
+/* Border colors for accordion items */
+.border-yellow-100 {
+  border-color: #c8c4b0 !important;
+}
+
+.border-green-100 {
+  border-color: #b0c4b8 !important;
+}
+
+.border-red-100 {
+  border-color: #c4b0b0 !important;
+}
+
+.border-primary-100 {
+  border-color: #d0d4e0 !important;
+}
+
+
+/* Blue border for accordion */
+.border-blue-100 {
+  border-color: #c8d4e0 !important;
+}
+
+/* Purple border for accordion */
+.border-purple-100 {
+  border-color: #d4c8e0 !important;
+}
+
+/* Override all accordion borders to be lighter */
+.rounded-xl.border {
+  border-color: #d0d4dc !important;
+}
+
+
+/* Responsive text sizes */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 13px;
+  }
+  
+  /* Much smaller headings on mobile */
+  h1, .text-3xl {
+    font-size: 1.1rem !important;
+    line-height: 1.4rem !important;
+  }
+  
+  .text-2xl {
+    font-size: 1rem !important;
+    line-height: 1.3rem !important;
+  }
+  
+  h2, .text-xl {
+    font-size: 0.95rem !important;
+    line-height: 1.25rem !important;
+  }
+  
+  h3, .text-lg {
+    font-size: 0.875rem !important;
+    line-height: 1.15rem !important;
+  }
+  
+  /* Smaller body text */
+  p, .text-base {
+    font-size: 0.8rem !important;
+    line-height: 1.1rem !important;
+  }
+  
+  .text-sm {
+    font-size: 0.7rem !important;
+    line-height: 0.95rem !important;
+  }
+  
+  .text-xs {
+    font-size: 0.6rem !important;
+    line-height: 0.8rem !important;
+  }
+  
+  /* Accordion titles smaller */
+  .font-semibold, .font-bold, .font-medium {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Category/accordion headers */
+  button span, summary span {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Smaller padding on mobile */
+  .p-6 {
+    padding: 1rem !important;
+  }
+  
+  .p-8 {
+    padding: 1.25rem !important;
+  }
+  
+  .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .py-6 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  .px-8 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  
+  /* Smaller gaps */
+  .gap-6 {
+    gap: 1rem !important;
+  }
+  
+  .gap-4 {
+    gap: 0.75rem !important;
+  }
+  
+  /* Smaller margins */
+  .mb-6 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mt-6 {
+    margin-top: 1rem !important;
+  }
+  
+  /* Code editor responsive */
+  .monaco-editor {
+    font-size: 12px !important;
+  }
+  
+  /* Prose content responsive */
+  .prose {
+    font-size: 0.875rem !important;
+  }
+  
+  .prose h1 {
+    font-size: 1.25rem !important;
+  }
+  
+  .prose h2 {
+    font-size: 1.125rem !important;
+  }
+  
+  .prose h3 {
+    font-size: 1rem !important;
+  }
+  
+  .prose pre {
+    font-size: 0.75rem !important;
+    padding: 0.75rem !important;
+  }
+  
+  .prose code {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  html {
+    font-size: 12px;
+  }
+  
+  h1, .text-3xl {
+    font-size: 0.95rem !important;
+  }
+  
+  .text-2xl {
+    font-size: 0.9rem !important;
+  }
+  
+  h2, .text-xl {
+    font-size: 0.85rem !important;
+  }
+  
+  .font-semibold, .font-bold, .font-medium {
+    font-size: 0.75rem !important;
+  }
+  
+  .p-4 {
+    padding: 0.5rem !important;
+  }
+  
+  .px-4 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  .p-3 {
+    padding: 0.4rem !important;
+  }
+  
+  .gap-3, .gap-4 {
+    gap: 0.5rem !important;
+  }
+}

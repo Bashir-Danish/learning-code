@@ -1,0 +1,638 @@
+﻿{
+  "categories": [
+    {
+      "id": "foundations",
+      "name": "1. Foundations",
+      "nameFa": "۱. مبانی",
+      "icon": "BookOpen",
+      "color": "#6366F1",
+      "description": "Big O, complexity analysis, and problem-solving basics",
+      "descriptionFa": "Big O، تحلیل پیچیدگی و مبانی حل مسئله",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "big-o-notation",
+          "title": "Big O Notation",
+          "titleFa": "نماد Big O",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "time-complexity",
+          "title": "Time Complexity",
+          "titleFa": "پیچیدگی زمانی",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "space-complexity",
+          "title": "Space Complexity",
+          "titleFa": "پیچیدگی فضایی",
+          "difficulty": "easy",
+          "estimatedTime": "30 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "problem-solving-approach",
+          "title": "Problem Solving Approach",
+          "titleFa": "روش حل مسئله",
+          "difficulty": "easy",
+          "estimatedTime": "35 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "arrays-strings",
+      "name": "2. Arrays & Strings",
+      "nameFa": "۲. آرایه‌ها و رشته‌ها",
+      "icon": "LayoutList",
+      "color": "#10B981",
+      "description": "Fundamental data structures and manipulation techniques",
+      "descriptionFa": "ساختار داده‌های پایه و تکنیک‌های دستکاری",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "arrays-basics",
+          "title": "Arrays Basics",
+          "titleFa": "مبانی آرایه",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "two-pointers",
+          "title": "Two Pointers Technique",
+          "titleFa": "تکنیک دو اشاره‌گر",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "sliding-window",
+          "title": "Sliding Window",
+          "titleFa": "پنجره لغزان",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "strings-manipulation",
+          "title": "String Manipulation",
+          "titleFa": "دستکاری رشته",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 4
+        },
+        {
+          "id": "prefix-sum",
+          "title": "Prefix Sum",
+          "titleFa": "مجموع پیشوندی",
+          "difficulty": "medium",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "hash-tables",
+      "name": "3. Hash Tables",
+      "nameFa": "۳. جدول هش",
+      "icon": "Hash",
+      "color": "#F59E0B",
+      "description": "Hash maps, sets, and O(1) lookups",
+      "descriptionFa": "هش مپ، مجموعه و جستجوی O(1)",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "hash-table-basics",
+          "title": "Hash Table Basics",
+          "titleFa": "مبانی جدول هش",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "hash-collisions",
+          "title": "Collision Handling",
+          "titleFa": "مدیریت برخورد",
+          "difficulty": "medium",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "hash-map-patterns",
+          "title": "HashMap Patterns",
+          "titleFa": "الگوهای HashMap",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "linked-lists",
+      "name": "4. Linked Lists",
+      "nameFa": "۴. لیست پیوندی",
+      "icon": "Link",
+      "color": "#8B5CF6",
+      "description": "Singly, doubly linked lists and pointer manipulation",
+      "descriptionFa": "لیست یک‌طرفه، دوطرفه و دستکاری اشاره‌گر",
+      "order": 4,
+      "lessons": [
+        {
+          "id": "singly-linked-list",
+          "title": "Singly Linked List",
+          "titleFa": "لیست پیوندی یک‌طرفه",
+          "difficulty": "easy",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "doubly-linked-list",
+          "title": "Doubly Linked List",
+          "titleFa": "لیست پیوندی دوطرفه",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "fast-slow-pointers",
+          "title": "Fast & Slow Pointers",
+          "titleFa": "اشاره‌گر سریع و کند",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "linked-list-reversal",
+          "title": "Linked List Reversal",
+          "titleFa": "معکوس کردن لیست",
+          "difficulty": "medium",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "stacks-queues",
+      "name": "5. Stacks & Queues",
+      "nameFa": "۵. پشته و صف",
+      "icon": "Layers",
+      "color": "#EC4899",
+      "description": "LIFO, FIFO structures and their applications",
+      "descriptionFa": "ساختارهای LIFO، FIFO و کاربردهای آن‌ها",
+      "order": 5,
+      "lessons": [
+        {
+          "id": "stack-basics",
+          "title": "Stack Basics",
+          "titleFa": "مبانی پشته",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "queue-basics",
+          "title": "Queue Basics",
+          "titleFa": "مبانی صف",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "monotonic-stack",
+          "title": "Monotonic Stack",
+          "titleFa": "پشته یکنوا",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "deque",
+          "title": "Deque (Double-ended Queue)",
+          "titleFa": "صف دوطرفه",
+          "difficulty": "medium",
+          "estimatedTime": "35 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "sorting",
+      "name": "6. Sorting Algorithms",
+      "nameFa": "۶. الگوریتم‌های مرتب‌سازی",
+      "icon": "ArrowUpDown",
+      "color": "#EF4444",
+      "description": "All major sorting algorithms with visualizations",
+      "descriptionFa": "تمام الگوریتم‌های مرتب‌سازی با visualization",
+      "order": 6,
+      "lessons": [
+        {
+          "id": "bubble-sort",
+          "title": "Bubble Sort",
+          "titleFa": "مرتب‌سازی حبابی",
+          "difficulty": "easy",
+          "estimatedTime": "30 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "selection-sort",
+          "title": "Selection Sort",
+          "titleFa": "مرتب‌سازی انتخابی",
+          "difficulty": "easy",
+          "estimatedTime": "30 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "insertion-sort",
+          "title": "Insertion Sort",
+          "titleFa": "مرتب‌سازی درجی",
+          "difficulty": "easy",
+          "estimatedTime": "35 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "merge-sort",
+          "title": "Merge Sort",
+          "titleFa": "مرتب‌سازی ادغامی",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 4
+        },
+        {
+          "id": "quick-sort",
+          "title": "Quick Sort",
+          "titleFa": "مرتب‌سازی سریع",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 5
+        },
+        {
+          "id": "heap-sort",
+          "title": "Heap Sort",
+          "titleFa": "مرتب‌سازی هیپی",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 6
+        },
+        {
+          "id": "counting-sort",
+          "title": "Counting Sort",
+          "titleFa": "مرتب‌سازی شمارشی",
+          "difficulty": "medium",
+          "estimatedTime": "35 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 7
+        }
+      ]
+    },
+    {
+      "id": "searching",
+      "name": "7. Searching Algorithms",
+      "nameFa": "۷. الگوریتم‌های جستجو",
+      "icon": "Search",
+      "color": "#06B6D4",
+      "description": "Linear, binary search and variations",
+      "descriptionFa": "جستجوی خطی، دودویی و تغییرات آن",
+      "order": 7,
+      "lessons": [
+        {
+          "id": "linear-search",
+          "title": "Linear Search",
+          "titleFa": "جستجوی خطی",
+          "difficulty": "easy",
+          "estimatedTime": "20 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "binary-search",
+          "title": "Binary Search",
+          "titleFa": "جستجوی دودویی",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "binary-search-variations",
+          "title": "Binary Search Variations",
+          "titleFa": "تغییرات جستجوی دودویی",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "recursion",
+      "name": "8. Recursion & Backtracking",
+      "nameFa": "۸. بازگشت و عقبگرد",
+      "icon": "Repeat",
+      "color": "#84CC16",
+      "description": "Recursive thinking and backtracking patterns",
+      "descriptionFa": "تفکر بازگشتی و الگوهای عقبگرد",
+      "order": 8,
+      "lessons": [
+        {
+          "id": "recursion-basics",
+          "title": "Recursion Basics",
+          "titleFa": "مبانی بازگشت",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "recursion-patterns",
+          "title": "Recursion Patterns",
+          "titleFa": "الگوهای بازگشت",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "backtracking",
+          "title": "Backtracking",
+          "titleFa": "عقبگرد",
+          "difficulty": "hard",
+          "estimatedTime": "60 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "trees",
+      "name": "9. Trees",
+      "nameFa": "۹. درخت‌ها",
+      "icon": "GitBranch",
+      "color": "#14B8A6",
+      "description": "Binary trees, BST, and tree traversals",
+      "descriptionFa": "درخت دودویی، BST و پیمایش درخت",
+      "order": 9,
+      "lessons": [
+        {
+          "id": "binary-tree-basics",
+          "title": "Binary Tree Basics",
+          "titleFa": "مبانی درخت دودویی",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "tree-traversals",
+          "title": "Tree Traversals",
+          "titleFa": "پیمایش درخت",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "binary-search-tree",
+          "title": "Binary Search Tree",
+          "titleFa": "درخت جستجوی دودویی",
+          "difficulty": "medium",
+          "estimatedTime": "60 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "balanced-trees",
+          "title": "Balanced Trees (AVL)",
+          "titleFa": "درخت‌های متوازن",
+          "difficulty": "hard",
+          "estimatedTime": "60 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "heaps",
+      "name": "10. Heaps & Priority Queues",
+      "nameFa": "۱۰. هیپ و صف اولویت",
+      "icon": "Triangle",
+      "color": "#F97316",
+      "description": "Min/max heaps and priority queue applications",
+      "descriptionFa": "هیپ کمینه/بیشینه و کاربردهای صف اولویت",
+      "order": 10,
+      "lessons": [
+        {
+          "id": "heap-basics",
+          "title": "Heap Basics",
+          "titleFa": "مبانی هیپ",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "priority-queue",
+          "title": "Priority Queue",
+          "titleFa": "صف اولویت",
+          "difficulty": "medium",
+          "estimatedTime": "40 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "top-k-problems",
+          "title": "Top K Problems",
+          "titleFa": "مسائل Top K",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "graphs",
+      "name": "11. Graphs",
+      "nameFa": "۱۱. گراف‌ها",
+      "icon": "Share2",
+      "color": "#A855F7",
+      "description": "Graph representations, BFS, DFS, and shortest paths",
+      "descriptionFa": "نمایش گراف، BFS، DFS و کوتاه‌ترین مسیر",
+      "order": 11,
+      "lessons": [
+        {
+          "id": "graph-basics",
+          "title": "Graph Basics",
+          "titleFa": "مبانی گراف",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "bfs",
+          "title": "Breadth-First Search (BFS)",
+          "titleFa": "جستجوی سطحی",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "dfs",
+          "title": "Depth-First Search (DFS)",
+          "titleFa": "جستجوی عمقی",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "dijkstra",
+          "title": "Dijkstra's Algorithm",
+          "titleFa": "الگوریتم دایکسترا",
+          "difficulty": "hard",
+          "estimatedTime": "60 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 4
+        },
+        {
+          "id": "topological-sort",
+          "title": "Topological Sort",
+          "titleFa": "مرتب‌سازی توپولوژیکی",
+          "difficulty": "hard",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "dynamic-programming",
+      "name": "12. Dynamic Programming",
+      "nameFa": "۱۲. برنامه‌نویسی پویا",
+      "icon": "Zap",
+      "color": "#DC2626",
+      "description": "Memoization, tabulation, and classic DP problems",
+      "descriptionFa": "حافظه‌سازی، جدول‌بندی و مسائل کلاسیک DP",
+      "order": 12,
+      "lessons": [
+        {
+          "id": "dp-introduction",
+          "title": "DP Introduction",
+          "titleFa": "مقدمه DP",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "memoization",
+          "title": "Memoization (Top-Down)",
+          "titleFa": "حافظه‌سازی (بالا به پایین)",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "tabulation",
+          "title": "Tabulation (Bottom-Up)",
+          "titleFa": "جدول‌بندی (پایین به بالا)",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "classic-dp-problems",
+          "title": "Classic DP Problems",
+          "titleFa": "مسائل کلاسیک DP",
+          "difficulty": "hard",
+          "estimatedTime": "90 min",
+          "hasVisualization": true,
+          "hasExercise": true,
+          "order": 4
+        }
+      ]
+    }
+  ]
+}

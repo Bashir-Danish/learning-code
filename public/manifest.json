@@ -1,0 +1,9 @@
+{
+  "name": "Algorithm Learning",
+  "short_name": "AlgoLearn",
+  "description": "Learn algorithms and data structures",
+  "theme_color": "#7c3aed",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
