@@ -1,17 +1,17 @@
-﻿import { useState } from 'react';
+﻿import { useState, useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
-import { 
-  BookOpen, 
-  LayoutList, 
-  Hash, 
-  Link, 
-  Layers, 
-  ArrowUpDown, 
-  Search, 
-  Repeat, 
-  GitBranch, 
-  Triangle, 
-  Share2, 
+import {
+  BookOpen,
+  LayoutList,
+  Hash,
+  Link,
+  Layers,
+  ArrowUpDown,
+  Search,
+  Repeat,
+  GitBranch,
+  Triangle,
+  Share2,
   Zap,
   CheckCircle2,
   Binary,
@@ -22,195 +22,220 @@ import {
 } from 'lucide-react';
 import { useProgress } from '../../contexts/ProgressContext';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useTechnology } from '../../contexts/TechnologyContext';
 import categoriesData from '../../data/categories.json';
 
 const iconMap = {
-  BookOpen, LayoutList, Hash, Link, Layers, ArrowUpDown, 
+  BookOpen, LayoutList, Hash, Link, Layers, ArrowUpDown,
   Search, Repeat, GitBranch, Triangle, Share2, Zap, Binary,
 };
 
 export default function Sidebar({ isOpen, onClose }) {
   const { isLessonComplete, getCategoryProgress } = useProgress();
   const { t, isRTL } = useLanguage();
-  const [expandedCategories, setExpandedCategories] = useState(['foundations']);
+  const { activeTechnology } = useTechnology();
+  const [expandedCategories, setExpandedCategories] = useState(['foundations', 'react-fundamentals', 'vue-fundamentals']);
+
+  // Filter categories by selected technology
+  const filteredCategories = useMemo(() => {
+    return categoriesData.categories.filter(
+      (cat) => (cat.technology || 'algorithms') === activeTechnology
+    );
+  }, [activeTechnology]);
 
   const toggleCategory = (categoryId) => {
-    setExpandedCategories(prev => 
-      prev.includes(categoryId) 
+    setExpandedCategories(prev =>
+      prev.includes(categoryId)
         ? prev.filter(id => id !== categoryId)
         : [...prev, categoryId]
     );
   };
 
+  const totalLessons = filteredCategories.reduce((acc, cat) => acc + cat.lessons.length, 0);
+
   return (
     <>
       {/* Mobile overlay */}
       {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden"
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-md z-40 lg:hidden transition-all duration-300"
           onClick={onClose}
         />
       )}
-      
+
       {/* Sidebar */}
-      <aside 
+      <aside
         className={`
-          fixed top-16 bottom-0 z-50 bg-gradient-to-b from-slate-50 to-gray-100 border-gray-200/80
-          w-72 transition-transform duration-300 ease-in-out
+          fixed top-16 bottom-0 z-50 bg-white/80 backdrop-blur-xl border-gray-200/50
+          w-72 transition-all duration-300 ease-in-out
           ${isRTL ? 'right-0 border-l' : 'left-0 border-r'}
-          ${isOpen ? 'translate-x-0' : isRTL ? 'translate-x-full' : '-translate-x-full'}
-          lg:translate-x-0 lg:sticky lg:top-0 lg:h-[calc(100vh-64px)]
-          overflow-hidden flex flex-col shadow-xl lg:shadow-none
+          ${isOpen ? 'translate-x-0 opacity-100' : isRTL ? 'translate-x-full opacity-0' : '-translate-x-full opacity-0'}
+          lg:translate-x-0 lg:opacity-100 lg:sticky lg:top-16 lg:h-[calc(100vh-64px)]
+          overflow-hidden flex flex-col shadow-2xl lg:shadow-none
         `}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200/80 bg-white/50">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
-              <Layers className="w-4 h-4 text-indigo-600" />
+        <div className="flex items-center justify-between p-5 border-b border-gray-100/80">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-200">
+              <Layers className="w-5 h-5 text-white" />
             </div>
-            <h2 className="font-bold text-gray-900">
-              {t('Categories', 'دسته‌بندی‌ها')}
-            </h2>
+            <div>
+              <h2 className="font-bold text-gray-900 leading-tight">
+                {t('Curriculum', 'سرفصل‌ها')}
+              </h2>
+              <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wider">
+                {activeTechnology} path
+              </p>
+            </div>
           </div>
-          <button 
+          <button
             onClick={onClose}
-            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-xl transition-all active:scale-95"
           >
-            <X className="w-5 h-5 text-gray-500" />
+            <X className="w-5 h-5 text-gray-400" />
           </button>
         </div>
 
         {/* Scrollable content */}
-        <nav className="flex-1 overflow-y-auto p-3 space-y-2">
-          {categoriesData.categories.map((category, index) => {
-            const Icon = iconMap[category.icon] || Binary;
-            const progress = getCategoryProgress(category.lessons);
-            const isExpanded = expandedCategories.includes(category.id);
-            const completedCount = category.lessons.filter(l => isLessonComplete(l.id)).length;
-            const isComplete = completedCount === category.lessons.length;
+        <nav className="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar">
+          {filteredCategories.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-10 px-4 text-center space-y-3">
+              <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-gray-300" />
+              </div>
+              <p className="text-sm text-gray-400 italic">
+                {t('No categories found for this path yet.', 'هنوز محتوایی برای این مسیر اضافه نشده است.')}
+              </p>
+            </div>
+          ) : (
+            filteredCategories.map((category, index) => {
+              const Icon = iconMap[category.icon] || Binary;
+              const progress = getCategoryProgress(category.lessons);
+              const isExpanded = expandedCategories.includes(category.id);
+              const completedCount = category.lessons.filter(l => isLessonComplete(l.id)).length;
+              const isComplete = completedCount === category.lessons.length;
 
-            return (
-              <div 
-                key={category.id} 
-                className={`rounded-xl overflow-hidden border transition-all duration-200 ${
-                  isExpanded 
-                    ? 'border-gray-300/80 shadow-sm bg-white' 
-                    : 'border-gray-200/60 bg-white/70 hover:bg-white hover:border-gray-300/60'
-                }`}
-              >
-                {/* Category header - Accordion trigger */}
-                <button
-                  onClick={() => toggleCategory(category.id)}
-                  className={`
-                    w-full flex items-center gap-3 p-3 text-left transition-all
-                    ${isExpanded ? 'bg-gradient-to-r from-gray-50 to-white' : 'hover:bg-gray-50/50'}
-                  `}
+              return (
+                <div
+                  key={category.id}
+                  className={`group rounded-2xl transition-all duration-300 ${isExpanded
+                    ? 'bg-white shadow-md border border-gray-100'
+                    : 'hover:bg-white/60 border border-transparent hover:border-gray-100'
+                    }`}
                 >
-                  <div 
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm"
-                    style={{ 
-                      background: `linear-gradient(135deg, ${category.color}20, ${category.color}10)`,
-                      border: `1px solid ${category.color}30`
-                    }}
+                  {/* Category header */}
+                  <button
+                    onClick={() => toggleCategory(category.id)}
+                    className="w-full flex items-center gap-3 p-3 text-left transition-all"
                   >
-                    <Icon className="w-5 h-5" style={{ color: category.color }} />
-                  </div>
-                  
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-gray-900 text-sm truncate">
-                        {index + 1}. {isRTL ? category.nameFa : category.name}
-                      </span>
-                      {isComplete && (
-                        <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      )}
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm transition-transform group-hover:scale-105"
+                      style={{
+                        background: `linear-gradient(135deg, ${category.color}15, ${category.color}05)`,
+                        border: `1.5px solid ${category.color}25`
+                      }}
+                    >
+                      <Icon className="w-5 h-5" style={{ color: category.color }} />
                     </div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full rounded-full transition-all duration-500"
-                          style={{ 
-                            width: `${progress}%`,
-                            background: `linear-gradient(90deg, ${category.color}, ${category.color}cc)`
-                          }}
-                        />
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className={`font-bold text-sm truncate transition-colors ${isExpanded ? 'text-gray-900' : 'text-gray-700'}`}>
+                          {isRTL ? category.nameFa : category.name}
+                        </span>
+                        {isComplete && (
+                          <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        )}
                       </div>
-                      <span className="text-xs font-medium text-gray-500 whitespace-nowrap">
-                        {completedCount}/{category.lessons.length}
-                      </span>
+                      <div className="flex items-center gap-2 mt-1.5">
+                        <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all duration-700 ease-out"
+                            style={{
+                              width: `${progress}%`,
+                              background: category.color
+                            }}
+                          />
+                        </div>
+                        <span className="text-[10px] font-bold text-gray-400 tabular-nums">
+                          {completedCount}/{category.lessons.length}
+                        </span>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all ${
-                    isExpanded ? 'bg-gray-200' : 'bg-gray-100'
-                  }`}>
-                    {isExpanded ? (
-                      <ChevronDown className="w-4 h-4 text-gray-600" />
-                    ) : (
-                      <ChevronRight className="w-4 h-4 text-gray-500" />
-                    )}
-                  </div>
-                </button>
+                    <div className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all duration-300 ${isExpanded ? 'bg-gray-100 rotate-180' : 'text-gray-400'}`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
 
-                {/* Lessons list - Accordion content */}
-                {isExpanded && (
-                  <div className="border-t border-gray-100 bg-gray-50/30">
-                    <ul className="py-2 px-2 space-y-1">
+                  {/* Lessons list */}
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-3 pb-3 pt-1 space-y-1">
                       {category.lessons.map((lesson) => {
                         const isComplete = isLessonComplete(lesson.id);
-                        
+
                         return (
-                          <li key={lesson.id}>
-                            <NavLink
-                              to={`/lesson/${lesson.id}`}
-                              onClick={onClose}
-                              className={({ isActive }) =>
-                                `flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-all ${
-                                  isActive
-                                    ? 'bg-gradient-to-r from-indigo-50 to-purple-50 shadow-sm border border-indigo-200/60 text-indigo-700 font-semibold'
-                                    : 'text-gray-600 hover:bg-white hover:shadow-sm hover:border-gray-200/60 border border-transparent'
-                                }`
-                              }
-                            >
-                              {isComplete ? (
-                                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0 shadow-sm">
-                                  <CheckCircle2 className="w-3 h-3 text-white" />
-                                </div>
-                              ) : (
-                                <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0 bg-white" />
-                              )}
-                              <span className="truncate flex-1">
-                                {isRTL ? lesson.titleFa : lesson.title}
+                          <NavLink
+                            key={lesson.id}
+                            to={`/lesson/${lesson.id}`}
+                            onClick={onClose}
+                            className={({ isActive }) =>
+                              `relative flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs transition-all border ${isActive
+                                ? 'bg-gray-900 border-gray-900 text-white shadow-lg shadow-gray-200 font-semibold translate-x-1'
+                                : 'text-gray-600 hover:bg-gray-50 border-transparent hover:border-gray-100'
+                              }`
+                            }
+                          >
+                            {isComplete ? (
+                              <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                                <CheckCircle2 className="w-3 h-3 text-white" />
+                              </div>
+                            ) : (
+                              <div className="w-5 h-5 rounded-full border-2 border-gray-200 flex-shrink-0 group-hover:border-gray-300" />
+                            )}
+                            <span className="truncate flex-1">
+                              {isRTL ? lesson.titleFa : lesson.title}
+                            </span>
+
+                            {/* Difficulty Badges */}
+                            {lesson.difficulty === 'hard' && (
+                              <span className="text-[9px] px-1.5 py-0.5 bg-red-100 text-red-600 rounded-md font-bold uppercase tracking-tighter">
+                                {t('Hard', 'سخت')}
                               </span>
-                              {lesson.difficulty === 'hard' && (
-                                <span className="text-[10px] px-1.5 py-0.5 bg-gradient-to-r from-red-100 to-orange-100 text-red-600 rounded-md font-semibold border border-red-200/50">
-                                  {t('Hard', 'سخت')}
-                                </span>
-                              )}
-                              {lesson.difficulty === 'medium' && (
-                                <span className="text-[10px] px-1.5 py-0.5 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-600 rounded-md font-semibold border border-amber-200/50">
-                                  {t('Med', 'متوسط')}
-                                </span>
-                              )}
-                            </NavLink>
-                          </li>
+                            )}
+                            {lesson.difficulty === 'medium' && (
+                              <span className="text-[9px] px-1.5 py-0.5 bg-amber-100 text-amber-600 rounded-md font-bold uppercase tracking-tighter">
+                                {t('Med', 'متوسط')}
+                              </span>
+                            )}
+                            {lesson.difficulty === 'expert' && (
+                              <span className="text-[9px] px-1.5 py-0.5 bg-purple-100 text-purple-600 rounded-md font-bold uppercase tracking-tighter">
+                                {t('Exp', 'تخصصی')}
+                              </span>
+                            )}
+                          </NavLink>
                         );
                       })}
-                    </ul>
+                    </div>
                   </div>
-                )}
-              </div>
-            );
-          })}
+                </div>
+              )
+            })
+          )}
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-gray-200/80 bg-white/50">
-          <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
-            <Sparkles className="w-3 h-3 text-amber-500" />
-            <span className="font-medium">
-              {t('12 Categories • 45+ Lessons', '۱۲ دسته‌بندی • ۴۵+ درس')}
+        <div className="p-5 border-t border-gray-100/80 bg-gray-50/50 backdrop-blur-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wide">
+                {filteredCategories.length} {t('Topics', 'مبحث')}
+              </span>
+            </div>
+            <span className="text-[11px] font-black text-gray-400">
+              {totalLessons} {t('Lessons', 'درس')}
             </span>
           </div>
         </div>

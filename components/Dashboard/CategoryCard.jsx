@@ -12,6 +12,7 @@ const difficultyColors = {
   easy: 'bg-green-100 text-green-700',
   medium: 'bg-yellow-100 text-yellow-700',
   hard: 'bg-red-100 text-red-700',
+  expert: 'bg-purple-100 text-purple-700',
 };
 
 export default function CategoryCard({ category }) {
@@ -22,12 +23,12 @@ export default function CategoryCard({ category }) {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
       {/* Header */}
-      <div 
+      <div
         className="p-4 border-b border-gray-100"
         style={{ backgroundColor: `${category.color}10` }}
       >
         <div className="flex items-center gap-3">
-          <div 
+          <div
             className="p-2 rounded-lg"
             style={{ backgroundColor: `${category.color}20` }}
           >
@@ -46,14 +47,14 @@ export default function CategoryCard({ category }) {
             </div>
           </div>
         </div>
-        
+
         {/* Progress bar */}
         <div className="mt-3 h-1.5 bg-gray-200 rounded-full overflow-hidden">
           <div
             className="h-full transition-all duration-300 rounded-full"
-            style={{ 
+            style={{
               width: `${progress}%`,
-              backgroundColor: category.color 
+              backgroundColor: category.color
             }}
           />
         </div>
@@ -63,7 +64,7 @@ export default function CategoryCard({ category }) {
       <div className="divide-y divide-gray-100">
         {category.lessons.slice(0, 4).map((lesson) => {
           const isComplete = isLessonComplete(lesson.id);
-          
+
           return (
             <Link
               key={lesson.id}
@@ -75,27 +76,25 @@ export default function CategoryCard({ category }) {
               ) : (
                 <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0" />
               )}
-              
+
               <div className="flex-1 min-w-0">
-                <p className={`text-sm font-medium truncate ${
-                  isComplete ? 'text-gray-500' : 'text-gray-900'
-                }`}>
+                <p className={`text-sm font-medium truncate ${isComplete ? 'text-gray-500' : 'text-gray-900'
+                  }`}>
                   {lesson.title}
                 </p>
                 <p className="text-xs text-gray-400">{lesson.estimatedTime}</p>
               </div>
-              
-              <span className={`text-xs px-2 py-0.5 rounded-full ${
-                difficultyColors[lesson.difficulty]
-              }`}>
+
+              <span className={`text-xs px-2 py-0.5 rounded-full ${difficultyColors[lesson.difficulty]
+                }`}>
                 {lesson.difficulty}
               </span>
-              
+
               <ChevronRight className="w-4 h-4 text-gray-400" />
             </Link>
           );
         })}
-        
+
         {category.lessons.length > 4 && (
           <div className="p-3 text-center">
             <span className="text-sm text-gray-500">

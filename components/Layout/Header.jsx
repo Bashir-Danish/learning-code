@@ -2,18 +2,30 @@
 import { BookOpen, BarChart3, Bug, Menu, Globe, Sparkles } from 'lucide-react';
 import { useProgress } from '../../contexts/ProgressContext';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useTechnology } from '../../contexts/TechnologyContext';
 import categoriesData from '../../data/categories.json';
 
 export default function Header({ onMenuClick }) {
   const { progress } = useProgress();
   const { language, toggleLanguage, t, isRTL } = useLanguage();
-  
-  const totalLessons = categoriesData.categories.reduce(
+
+  const { activeTechnology } = useTechnology();
+
+  const techCategories = categoriesData.categories.filter(
+    (cat) => (cat.technology || 'algorithms') === activeTechnology
+  );
+
+  const totalLessons = techCategories.reduce(
     (sum, cat) => sum + cat.lessons.length, 0
   );
-  const completedCount = progress.completedLessons.length;
-  const overallProgress = totalLessons > 0 
-    ? Math.round((completedCount / totalLessons) * 100) 
+
+  // Filter completed lessons to only include those in the current technology
+  const completedCount = progress.completedLessons.filter(lessonId => {
+    return techCategories.some(cat => cat.lessons.some(l => l.id === lessonId));
+  }).length;
+
+  const overallProgress = totalLessons > 0
+    ? Math.round((completedCount / totalLessons) * 100)
     : 0;
 
   return (

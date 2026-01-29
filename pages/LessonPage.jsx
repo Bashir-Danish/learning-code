@@ -1,7 +1,7 @@
 ﻿import { useState, useCallback, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Editor from '@monaco-editor/react';
-import { 
+import {
   Clock, Play, Code, CheckCircle2, ArrowLeft, ArrowRight,
   BookOpen, Lightbulb, Target, Zap, Bug, Trophy, ChevronRight,
   Sparkles, Brain, Rocket, Eye, EyeOff, RotateCcw, Copy, Check,
@@ -22,6 +22,7 @@ const difficultyConfig = {
   easy: { color: 'green', emoji: '🟢', label: { en: 'Easy', fa: 'آسان' } },
   medium: { color: 'yellow', emoji: '🟡', label: { en: 'Medium', fa: 'متوسط' } },
   hard: { color: 'red', emoji: '🔴', label: { en: 'Hard', fa: 'سخت' } },
+  expert: { color: 'purple', emoji: '🟣', label: { en: 'Expert', fa: 'تخصصی' } },
 };
 
 const tabs = [
@@ -80,7 +81,7 @@ function ContextMenu({ x, y, onClose, onSelectLanguage, currentLang }) {
 function Accordion({ title, titleFa, icon: Icon, children, defaultOpen = false, color = 'primary' }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const { t, isRTL } = useLanguage();
-  
+
   const colors = {
     primary: 'from-primary-50 to-indigo-50 border-primary-100',
     green: 'from-green-50 to-emerald-50 border-green-100',
@@ -120,7 +121,7 @@ export default function LessonPage() {
   const { isLessonComplete, markLessonComplete, isExerciseComplete, markExerciseComplete } = useProgress();
   const { t, isRTL, language } = useLanguage();
   const isMobile = useIsMobile();
-  
+
   const lesson = getLesson(lessonId);
   const exercise = getExercise(lessonId);
   const isComplete = isLessonComplete(lessonId);
@@ -242,7 +243,7 @@ export default function LessonPage() {
 
             <div className="flex flex-wrap items-center gap-2">
               <span className={`px-3 py-1.5 rounded-lg text-sm font-medium bg-white/10 border border-white/20`}>
-                {difficulty.emoji} {isRTL ? difficulty.label.fa : difficulty.label.en}
+                {difficulty?.emoji || '🟢'} {isRTL ? (difficulty?.label.fa || t('Easy', 'آسان')) : (difficulty?.label.en || t('Easy', 'Easy'))}
               </span>
               <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg text-sm border border-white/20">
                 <Clock className="w-4 h-4" />
@@ -278,19 +279,18 @@ export default function LessonPage() {
               const isActive = activeTab === tab.id;
               const hasDebugger = lessonsWithDebugger.includes(lessonId);
               const isDisabled = (tab.id === 'practice' && !exercise) || (tab.id === 'debug' && (!exercise || !hasDebugger));
-              
+
               return (
                 <button
                   key={tab.id}
                   onClick={() => !isDisabled && setActiveTab(tab.id)}
                   disabled={isDisabled}
-                  className={`flex items-center gap-2 px-5 py-4 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${
-                    isActive
-                      ? 'border-primary-600 text-primary-600 bg-primary-50/50'
-                      : isDisabled
+                  className={`flex items-center gap-2 px-5 py-4 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${isActive
+                    ? 'border-primary-600 text-primary-600 bg-primary-50/50'
+                    : isDisabled
                       ? 'border-transparent text-gray-300 cursor-not-allowed'
                       : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   {isRTL ? tab.label.fa : tab.label.en}
@@ -310,22 +310,20 @@ export default function LessonPage() {
                 <div className="inline-flex items-center bg-gray-100 rounded-xl p-1">
                   <button
                     onClick={() => setContentLang('en')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      contentLang === 'en'
-                        ? 'bg-white text-primary-700 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${contentLang === 'en'
+                      ? 'bg-white text-primary-700 shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                      }`}
                   >
                     <Globe className="w-4 h-4" />
                     English
                   </button>
                   <button
                     onClick={() => setContentLang('fa')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      contentLang === 'fa'
-                        ? 'bg-white text-primary-700 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${contentLang === 'fa'
+                      ? 'bg-white text-primary-700 shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                      }`}
                   >
                     <Globe className="w-4 h-4" />
                     فارسی
@@ -333,10 +331,10 @@ export default function LessonPage() {
                 </div>
               </div>
 
-              <Accordion 
-                title="Why Learn This?" 
-                titleFa="چرا این را یاد بگیریم؟" 
-                icon={Target} 
+              <Accordion
+                title="Why Learn This?"
+                titleFa="چرا این را یاد بگیریم؟"
+                icon={Target}
                 defaultOpen={true}
                 color="blue"
               >
@@ -348,24 +346,24 @@ export default function LessonPage() {
                 </p>
               </Accordion>
 
-              <Accordion 
-                title="Full Explanation" 
-                titleFa="توضیحات کامل" 
-                icon={BookOpen} 
+              <Accordion
+                title="Full Explanation"
+                titleFa="توضیحات کامل"
+                icon={BookOpen}
                 defaultOpen={true}
                 color="blue"
               >
                 <div className="prose prose-sm max-w-none">
-                  <MarkdownRenderer 
-                    content={contentLang === 'fa' ? lesson.contentFa : lesson.content} 
+                  <MarkdownRenderer
+                    content={contentLang === 'fa' ? lesson.contentFa : lesson.content}
                     isRTL={contentLang === 'fa'}
                   />
                 </div>
               </Accordion>
 
-              <Accordion 
-                title="Key Takeaways" 
-                titleFa="نکات کلیدی" 
+              <Accordion
+                title="Key Takeaways"
+                titleFa="نکات کلیدی"
                 icon={Sparkles}
                 color="green"
               >
@@ -389,10 +387,10 @@ export default function LessonPage() {
           {/* Examples Tab */}
           {activeTab === 'examples' && (
             <div className="space-y-6">
-              <Accordion 
-                title="Basic Example" 
-                titleFa="مثال پایه" 
-                icon={Code} 
+              <Accordion
+                title="Basic Example"
+                titleFa="مثال پایه"
+                icon={Code}
                 defaultOpen={true}
                 color="blue"
               >
@@ -413,9 +411,9 @@ console.log(result); // Expected output based on algorithm`}</code>
                 </p>
               </Accordion>
 
-              <Accordion 
-                title="Step-by-Step Walkthrough" 
-                titleFa="توضیح گام به گام" 
+              <Accordion
+                title="Step-by-Step Walkthrough"
+                titleFa="توضیح گام به گام"
                 icon={ChevronRight}
                 color="purple"
               >
@@ -436,9 +434,9 @@ console.log(result); // Expected output based on algorithm`}</code>
                 </div>
               </Accordion>
 
-              <Accordion 
-                title="Edge Cases" 
-                titleFa="موارد خاص" 
+              <Accordion
+                title="Edge Cases"
+                titleFa="موارد خاص"
                 icon={AlertTriangle}
                 color="yellow"
               >
@@ -467,22 +465,20 @@ console.log(result); // Expected output based on algorithm`}</code>
                 <div className="inline-flex items-center bg-gray-100 rounded-xl p-1">
                   <button
                     onClick={() => setContentLang('en')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      contentLang === 'en'
-                        ? 'bg-white text-primary-700 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${contentLang === 'en'
+                      ? 'bg-white text-primary-700 shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                      }`}
                   >
                     <Globe className="w-4 h-4" />
                     English
                   </button>
                   <button
                     onClick={() => setContentLang('fa')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      contentLang === 'fa'
-                        ? 'bg-white text-primary-700 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${contentLang === 'fa'
+                      ? 'bg-white text-primary-700 shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                      }`}
                   >
                     <Globe className="w-4 h-4" />
                     فارسی
@@ -490,10 +486,10 @@ console.log(result); // Expected output based on algorithm`}</code>
                 </div>
               </div>
 
-              <Accordion 
-                title="Pro Tips" 
-                titleFa="نکات حرفه‌ای" 
-                icon={Zap} 
+              <Accordion
+                title="Pro Tips"
+                titleFa="نکات حرفه‌ای"
+                icon={Zap}
                 defaultOpen={true}
                 color="yellow"
               >
@@ -512,9 +508,9 @@ console.log(result); // Expected output based on algorithm`}</code>
                 </ul>
               </Accordion>
 
-              <Accordion 
-                title="Common Mistakes" 
-                titleFa="اشتباهات رایج" 
+              <Accordion
+                title="Common Mistakes"
+                titleFa="اشتباهات رایج"
                 icon={AlertTriangle}
                 color="red"
               >
@@ -539,10 +535,10 @@ console.log(result); // Expected output based on algorithm`}</code>
           {activeTab === 'practice' && exercise && (
             <div className="space-y-6">
               {/* Exercise Description */}
-              <Accordion 
-                title="Exercise Description" 
-                titleFa="توضیحات تمرین" 
-                icon={Target} 
+              <Accordion
+                title="Exercise Description"
+                titleFa="توضیحات تمرین"
+                icon={Target}
                 defaultOpen={true}
                 color="blue"
               >
@@ -604,7 +600,7 @@ console.log(result); // Expected output based on algorithm`}</code>
                           startColumn: word.startColumn,
                           endColumn: word.endColumn
                         };
-                        
+
                         const suggestions = [
                           {
                             label: 'for',
@@ -813,10 +809,10 @@ console.log(result); // Expected output based on algorithm`}</code>
 
               {/* Solution */}
               {showSolution && exercise.solution && (
-                <Accordion 
-                  title="Solution" 
-                  titleFa="پاسخ" 
-                  icon={Eye} 
+                <Accordion
+                  title="Solution"
+                  titleFa="پاسخ"
+                  icon={Eye}
                   defaultOpen={true}
                   color="green"
                 >
@@ -850,9 +846,9 @@ console.log(result); // Expected output based on algorithm`}</code>
               {/* Visual Debugger */}
               <AlgorithmDebugger lessonId={lessonId} exercise={exercise} />
 
-              <Accordion 
-                title="Debugging Tips" 
-                titleFa="نکات دیباگ" 
+              <Accordion
+                title="Debugging Tips"
+                titleFa="نکات دیباگ"
                 icon={Lightbulb}
                 color="yellow"
               >
@@ -895,11 +891,10 @@ console.log(result); // Expected output based on algorithm`}</code>
         <button
           onClick={() => markLessonComplete(lessonId)}
           disabled={isComplete}
-          className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${
-            isComplete
-              ? 'bg-green-100 text-green-700 cursor-default'
-              : 'bg-gradient-to-r from-primary-500 to-purple-600 text-white hover:from-primary-600 hover:to-purple-700 shadow-lg shadow-primary-500/25'
-          }`}
+          className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${isComplete
+            ? 'bg-green-100 text-green-700 cursor-default'
+            : 'bg-gradient-to-r from-primary-500 to-purple-600 text-white hover:from-primary-600 hover:to-purple-700 shadow-lg shadow-primary-500/25'
+            }`}
         >
           {isComplete ? (
             <>

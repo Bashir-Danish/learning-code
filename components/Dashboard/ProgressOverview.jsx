@@ -2,23 +2,23 @@
 import { useProgress } from '../../contexts/ProgressContext';
 import categoriesData from '../../data/categories.json';
 
-export default function ProgressOverview() {
+export function ProgressOverview() {
   const { progress } = useProgress();
-  
+
   const totalLessons = categoriesData.categories.reduce(
     (sum, cat) => sum + cat.lessons.length,
     0
   );
-  
+
   const totalExercises = categoriesData.categories.reduce(
     (sum, cat) => sum + cat.lessons.filter(l => l.hasExercise).length,
     0
   );
-  
+
   const completedLessons = progress.completedLessons.length;
   const completedExercises = progress.completedExercises.length;
-  const overallProgress = totalLessons > 0 
-    ? Math.round((completedLessons / totalLessons) * 100) 
+  const overallProgress = totalLessons > 0
+    ? Math.round((completedLessons / totalLessons) * 100)
     : 0;
 
   const stats = [
@@ -59,7 +59,6 @@ export default function ProgressOverview() {
   return (
     <div className="bg-gradient-to-r from-indigo-600 to-purple-700 rounded-2xl p-6 mb-8">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        {/* Welcome message */}
         <div>
           <h2 className="text-2xl font-bold mb-1 text-white">
             Welcome to Algorithm Dashboard
@@ -72,7 +71,6 @@ export default function ProgressOverview() {
           </p>
         </div>
 
-        {/* Progress circle */}
         <div className="flex items-center gap-4">
           <div className="relative w-24 h-24">
             <svg className="w-full h-full transform -rotate-90">
@@ -102,7 +100,6 @@ export default function ProgressOverview() {
         </div>
       </div>
 
-      {/* Stats grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
         {stats.map((stat) => (
           <div

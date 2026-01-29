@@ -9,6 +9,7 @@
       "description": "Big O, complexity analysis, and problem-solving basics",
       "descriptionFa": "Big O، تحلیل پیچیدگی و مبانی حل مسئله",
       "order": 1,
+      "technology": "algorithms",
       "lessons": [
         {
           "id": "big-o-notation",
@@ -61,6 +62,7 @@
       "description": "Fundamental data structures and manipulation techniques",
       "descriptionFa": "ساختار داده‌های پایه و تکنیک‌های دستکاری",
       "order": 2,
+      "technology": "algorithms",
       "lessons": [
         {
           "id": "arrays-basics",
@@ -123,6 +125,7 @@
       "description": "Hash maps, sets, and O(1) lookups",
       "descriptionFa": "هش مپ، مجموعه و جستجوی O(1)",
       "order": 3,
+      "technology": "algorithms",
       "lessons": [
         {
           "id": "hash-table-basics",
@@ -164,6 +167,7 @@
       "color": "#8B5CF6",
       "description": "Singly, doubly linked lists and pointer manipulation",
       "descriptionFa": "لیست یک‌طرفه، دوطرفه و دستکاری اشاره‌گر",
+      "technology": "algorithms",
       "order": 4,
       "lessons": [
         {
@@ -216,6 +220,7 @@
       "color": "#EC4899",
       "description": "LIFO, FIFO structures and their applications",
       "descriptionFa": "ساختارهای LIFO، FIFO و کاربردهای آن‌ها",
+      "technology": "algorithms",
       "order": 5,
       "lessons": [
         {
@@ -268,6 +273,7 @@
       "color": "#EF4444",
       "description": "All major sorting algorithms with visualizations",
       "descriptionFa": "تمام الگوریتم‌های مرتب‌سازی با visualization",
+      "technology": "algorithms",
       "order": 6,
       "lessons": [
         {
@@ -350,6 +356,7 @@
       "color": "#06B6D4",
       "description": "Linear, binary search and variations",
       "descriptionFa": "جستجوی خطی، دودویی و تغییرات آن",
+      "technology": "algorithms",
       "order": 7,
       "lessons": [
         {
@@ -392,6 +399,7 @@
       "color": "#84CC16",
       "description": "Recursive thinking and backtracking patterns",
       "descriptionFa": "تفکر بازگشتی و الگوهای عقبگرد",
+      "technology": "algorithms",
       "order": 8,
       "lessons": [
         {
@@ -434,6 +442,7 @@
       "color": "#14B8A6",
       "description": "Binary trees, BST, and tree traversals",
       "descriptionFa": "درخت دودویی، BST و پیمایش درخت",
+      "technology": "algorithms",
       "order": 9,
       "lessons": [
         {
@@ -486,6 +495,7 @@
       "color": "#F97316",
       "description": "Min/max heaps and priority queue applications",
       "descriptionFa": "هیپ کمینه/بیشینه و کاربردهای صف اولویت",
+      "technology": "algorithms",
       "order": 10,
       "lessons": [
         {
@@ -528,6 +538,7 @@
       "color": "#A855F7",
       "description": "Graph representations, BFS, DFS, and shortest paths",
       "descriptionFa": "نمایش گراف، BFS، DFS و کوتاه‌ترین مسیر",
+      "technology": "algorithms",
       "order": 11,
       "lessons": [
         {
@@ -591,6 +602,7 @@
       "description": "Memoization, tabulation, and classic DP problems",
       "descriptionFa": "حافظه‌سازی، جدول‌بندی و مسائل کلاسیک DP",
       "order": 12,
+      "technology": "algorithms",
       "lessons": [
         {
           "id": "dp-introduction",
@@ -631,6 +643,558 @@
           "hasVisualization": true,
           "hasExercise": true,
           "order": 4
+        }
+      ]
+    },
+    {
+      "id": "react-fundamentals",
+      "name": "13. React Fundamentals",
+      "nameFa": "۱۳. مبانی ری‌اکت",
+      "icon": "React",
+      "color": "#61DAFB",
+      "description": "Core React concepts from JSX to Forms and Styling",
+      "descriptionFa": "مفاهیم پایه ری‌اکت از JSX تا فرم‌ها و استایل‌دهی",
+      "order": 13,
+      "technology": "react",
+      "lessons": [
+        {
+          "id": "jsx-basics",
+          "title": "JSX Basics",
+          "titleFa": "مبانی JSX",
+          "difficulty": "easy",
+          "estimatedTime": "30 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "components-props",
+          "title": "Components & Props",
+          "titleFa": "کامپوننت‌ها و پراپس",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "state-usestate",
+          "title": "State & useState",
+          "titleFa": "استیت و هوک useState",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "event-handling",
+          "title": "Event Handling",
+          "titleFa": "مدیریت رویدادها",
+          "difficulty": "easy",
+          "estimatedTime": "35 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 4
+        },
+        {
+          "id": "conditional-rendering",
+          "title": "Conditional Rendering",
+          "titleFa": "رندرینگ شرطی",
+          "difficulty": "easy",
+          "estimatedTime": "30 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 5
+        },
+        {
+          "id": "lists-keys",
+          "title": "Lists & Keys",
+          "titleFa": "لیست‌ها و کلیدها",
+          "difficulty": "easy",
+          "estimatedTime": "35 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 6
+        },
+        {
+          "id": "forms-controlled",
+          "title": "Forms & Controlled Components",
+          "titleFa": "فرم‌ها و کامپوننت‌های کنترل‌شده",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 7
+        },
+        {
+          "id": "styling-react",
+          "title": "Styling in React",
+          "titleFa": "استایل‌دهی در ری‌اکت",
+          "difficulty": "easy",
+          "estimatedTime": "30 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 8
+        }
+      ]
+    },
+    {
+      "id": "react-intermediate",
+      "name": "14. React Intermediate",
+      "nameFa": "۱۴. ری‌اکت متوسطه",
+      "icon": "Layers",
+      "color": "#61DAFB",
+      "description": "Lifecycle, Context, and performance optimization techniques",
+      "descriptionFa": "چرخه حیات، Context و تکنیک‌های بهینه‌سازی عملکرد",
+      "order": 14,
+      "technology": "react",
+      "lessons": [
+        {
+          "id": "lifecycle-useeffect",
+          "title": "Lifecycle & useEffect",
+          "titleFa": "چرخه حیات",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "order": 1
+        },
+        {
+          "id": "context-api",
+          "title": "Context API",
+          "titleFa": "Context API",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "order": 2
+        },
+        {
+          "id": "custom-hooks",
+          "title": "Custom Hooks",
+          "titleFa": "هوک‌های سفارشی",
+          "difficulty": "medium",
+          "estimatedTime": "40 min",
+          "order": 3
+        },
+        {
+          "id": "performance-optimization",
+          "title": "Performance Optimization",
+          "titleFa": "بهینه‌سازی",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "order": 4
+        },
+        {
+          "id": "error-boundaries",
+          "title": "Error Boundaries",
+          "titleFa": "مدیریت خطا",
+          "difficulty": "medium",
+          "estimatedTime": "30 min",
+          "order": 5
+        },
+        {
+          "id": "portals",
+          "title": "Portals",
+          "titleFa": "پورتال‌ها",
+          "difficulty": "medium",
+          "estimatedTime": "25 min",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": "react-advanced",
+      "name": "15. React Advanced",
+      "nameFa": "۱۵. ری‌اکت پیشرفته",
+      "icon": "Zap",
+      "color": "#61DAFB",
+      "description": "Router, State Management, and Data Fetching",
+      "descriptionFa": "روتر، مدیریت وضعیت و دریافت داده‌ها",
+      "order": 15,
+      "technology": "react",
+      "lessons": [
+        {
+          "id": "react-router",
+          "title": "React Router v7",
+          "titleFa": "مسیربابی",
+          "difficulty": "hard",
+          "estimatedTime": "60 min",
+          "order": 1
+        },
+        {
+          "id": "state-management",
+          "title": "State Management",
+          "titleFa": "مدیریت وضعیت",
+          "difficulty": "hard",
+          "estimatedTime": "60 min",
+          "order": 2
+        },
+        {
+          "id": "data-fetching",
+          "title": "Data Fetching",
+          "titleFa": "دریافت داده",
+          "difficulty": "hard",
+          "estimatedTime": "55 min",
+          "order": 3
+        },
+        {
+          "id": "server-components",
+          "title": "Server Components",
+          "titleFa": "کامپوننت‌های سروری",
+          "difficulty": "hard",
+          "estimatedTime": "45 min",
+          "order": 4
+        },
+        {
+          "id": "code-splitting",
+          "title": "Code Splitting",
+          "titleFa": "جداسازی کد",
+          "difficulty": "hard",
+          "estimatedTime": "35 min",
+          "order": 5
+        },
+        {
+          "id": "testing-react",
+          "title": "Testing React",
+          "titleFa": "تست‌نویسی",
+          "difficulty": "hard",
+          "estimatedTime": "55 min",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": "react-expert",
+      "name": "16. React Expert",
+      "nameFa": "۱۶. ری‌اکت تخصصی",
+      "icon": "Award",
+      "color": "#61DAFB",
+      "description": "Advanced Patterns, TypeScript, and Architecture",
+      "descriptionFa": "الگوهای پیشرفته، تایپ‌اسکریپت و معماری",
+      "order": 16,
+      "technology": "react",
+      "lessons": [
+        {
+          "id": "advanced-patterns",
+          "title": "Advanced Patterns",
+          "titleFa": "الگوهای پیشرفته",
+          "difficulty": "expert",
+          "estimatedTime": "60 min",
+          "order": 1
+        },
+        {
+          "id": "typescript-react",
+          "title": "TypeScript with React",
+          "titleFa": "تایپ‌اسکریپت",
+          "difficulty": "expert",
+          "estimatedTime": "60 min",
+          "order": 2
+        },
+        {
+          "id": "build-tools",
+          "title": "Build Tools",
+          "titleFa": "ابزارهای ساخت",
+          "difficulty": "expert",
+          "estimatedTime": "45 min",
+          "order": 3
+        },
+        {
+          "id": "nextjs-basics",
+          "title": "Next.js Basics",
+          "titleFa": "مبانی Next.js",
+          "difficulty": "expert",
+          "estimatedTime": "60 min",
+          "order": 4
+        },
+        {
+          "id": "react-native",
+          "title": "React Native Basics",
+          "titleFa": "ری‌اکت نیتیو",
+          "difficulty": "expert",
+          "estimatedTime": "50 min",
+          "order": 5
+        },
+        {
+          "id": "real-world-patterns",
+          "title": "Real-World Architecture",
+          "titleFa": "معماری واقعی",
+          "difficulty": "expert",
+          "estimatedTime": "60 min",
+          "order": 6
+        },
+        {
+          "id": "react-pwa",
+          "title": "PWA & Native Install",
+          "titleFa": "اپلیکیشن‌های PWA",
+          "difficulty": "expert",
+          "estimatedTime": "55 min",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "id": "vue-fundamentals",
+      "name": "17. Vue.js Fundamentals",
+      "nameFa": "۱۷. مبانی Vue.js",
+      "icon": "Code",
+      "color": "#42B883",
+      "description": "Introduction to Vue 3, SFCs, and Reactivity System",
+      "descriptionFa": "آشنایی با وی‌جی‌اس ۳، ساختار کامپوننت‌ها و سیستم واکنش‌گرایی",
+      "order": 17,
+      "technology": "vue",
+      "lessons": [
+        {
+          "id": "intro-sfc",
+          "title": "Introduction to SFC",
+          "titleFa": "آشنایی با SFC",
+          "difficulty": "easy",
+          "estimatedTime": "30 min",
+          "order": 1
+        },
+        {
+          "id": "reactivity-ref",
+          "title": "Reactivity Basics",
+          "titleFa": "پایه‌های واکنش‌گرایی",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "order": 2
+        },
+        {
+          "id": "lifecycle-watchers",
+          "title": "Lifecycle & Watchers",
+          "titleFa": "چرخه حیات و واچرها",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "order": 3
+        },
+        {
+          "id": "component-composition",
+          "title": "Props & Emits",
+          "titleFa": "ارتباط کامپوننت‌ها",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "order": 4
+        },
+        {
+          "id": "forms-validation",
+          "title": "Forms & Validation",
+          "titleFa": "فرم‌ها و اعتبارسنجی",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "order": 5
+        },
+        {
+          "id": "builtin-components",
+          "title": "Built-in Components",
+          "titleFa": "کامپوننت‌های داخلی",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "order": 6
+        },
+        {
+          "id": "directives-builtin",
+          "title": "Built-in Directives",
+          "titleFa": "دایرکتیوهای داخلی",
+          "difficulty": "easy",
+          "estimatedTime": "35 min",
+          "order": 7
+        },
+        {
+          "id": "vue-debugging",
+          "title": "Debugging & Errors",
+          "titleFa": "دیباگینگ و مدیریت خطا",
+          "difficulty": "easy",
+          "estimatedTime": "40 min",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "id": "vue-intermediate",
+      "name": "18. Vue.js Intermediate",
+      "nameFa": "۱۸. سطح متوسط Vue.js",
+      "icon": "Layers",
+      "color": "#42B883",
+      "description": "Composables, Dependency Injection, and Advanced Component UI Patterns",
+      "descriptionFa": "کامپوزبل‌ها، تزریق وابستگی و الگوهای پیشرفته رابط کاربری",
+      "order": 18,
+      "technology": "vue",
+      "lessons": [
+        {
+          "id": "composables",
+          "title": "Composables",
+          "titleFa": "کامپوزبل‌ها",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "order": 1
+        },
+        {
+          "id": "provide-inject",
+          "title": "Provide / Inject",
+          "titleFa": "پراواید و اینجکت",
+          "difficulty": "medium",
+          "estimatedTime": "40 min",
+          "order": 2
+        },
+        {
+          "id": "dynamic-components",
+          "title": "Dynamic Components",
+          "titleFa": "کامپوننت‌های پویا",
+          "difficulty": "medium",
+          "estimatedTime": "45 min",
+          "order": 3
+        },
+        {
+          "id": "advanced-slots",
+          "title": "Advanced Slots",
+          "titleFa": "اسلات‌های پیشرفته",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "order": 4
+        },
+        {
+          "id": "directives-plugins",
+          "title": "Directives & Plugins",
+          "titleFa": "دایرکتیوها و پلاگین‌ها",
+          "difficulty": "medium",
+          "estimatedTime": "50 min",
+          "order": 5
+        },
+        {
+          "id": "animations-gsap",
+          "title": "Animations & GSAP",
+          "titleFa": "انیمیشن‌ها و GSAP",
+          "difficulty": "medium",
+          "estimatedTime": "55 min",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": "vue-advanced",
+      "name": "19. Vue.js Advanced",
+      "nameFa": "۱۹. سطح پیشرفته Vue.js",
+      "icon": "Zap",
+      "color": "#42B883",
+      "description": "State Management with Pinia, Complex Routing, and API Patterns",
+      "descriptionFa": "مدیریت استیت با پینیا، مسیریابی پیچیده و الگوهای کار با API",
+      "order": 19,
+      "technology": "vue",
+      "lessons": [
+        {
+          "id": "pinia",
+          "title": "Pinia State Management",
+          "titleFa": "مدیریت استیت با پینیا",
+          "difficulty": "hard",
+          "estimatedTime": "60 min",
+          "order": 1
+        },
+        {
+          "id": "vue-router",
+          "title": "Vue Router 4",
+          "titleFa": "مسیریابی با Vue Router",
+          "difficulty": "hard",
+          "estimatedTime": "50 min",
+          "order": 2
+        },
+        {
+          "id": "vue-data-fetching",
+          "title": "Data Fetching",
+          "titleFa": "دریافت داده‌ها",
+          "difficulty": "hard",
+          "estimatedTime": "50 min",
+          "order": 3
+        },
+        {
+          "id": "vue-i18n",
+          "title": "Internationalization",
+          "titleFa": "بومی‌سازی",
+          "difficulty": "hard",
+          "estimatedTime": "50 min",
+          "order": 4
+        },
+        {
+          "id": "ui-libraries",
+          "title": "UI Libraries",
+          "titleFa": "کتابخانه‌های UI",
+          "difficulty": "hard",
+          "estimatedTime": "55 min",
+          "order": 5
+        },
+        {
+          "id": "vite-tooling",
+          "title": "Vite Tooling",
+          "titleFa": "ابزارهای Vite",
+          "difficulty": "hard",
+          "estimatedTime": "60 min",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": "vue-expert",
+      "name": "20. Vue.js Expert",
+      "nameFa": "۲۰. سطح تخصصی Vue.js",
+      "icon": "Rocket",
+      "color": "#42B883",
+      "description": "Performance, SSR with Nuxt 3, and Enterprise Testing",
+      "descriptionFa": "بهینه‌سازی، رندر سمت سرور با Nuxt و تست‌نویسی پیشرفته",
+      "order": 20,
+      "technology": "vue",
+      "lessons": [
+        {
+          "id": "vue-performance",
+          "title": "Performance Optimization",
+          "titleFa": "بهینه‌سازی کارایی",
+          "difficulty": "expert",
+          "estimatedTime": "60 min",
+          "order": 1
+        },
+        {
+          "id": "nuxt-basics",
+          "title": "Introduction to Nuxt 3",
+          "titleFa": "آشنایی با Nuxt 3",
+          "difficulty": "expert",
+          "estimatedTime": "70 min",
+          "order": 2
+        },
+        {
+          "id": "vue-testing",
+          "title": "Testing Vue Apps",
+          "titleFa": "تست‌نویسی برای Vue",
+          "difficulty": "expert",
+          "estimatedTime": "55 min",
+          "order": 3
+        },
+        {
+          "id": "advanced-nuxt",
+          "title": "Advanced Nuxt",
+          "titleFa": "نیترو و میان‌افزار",
+          "difficulty": "expert",
+          "estimatedTime": "70 min",
+          "order": 4
+        },
+        {
+          "id": "vue-microfrontends",
+          "title": "Micro-frontends",
+          "titleFa": "میکروفرانت‌اند",
+          "difficulty": "expert",
+          "estimatedTime": "65 min",
+          "order": 5
+        },
+        {
+          "id": "vue-mobile",
+          "title": "Vue for Mobile",
+          "titleFa": "موبایل (Ionic)",
+          "difficulty": "expert",
+          "estimatedTime": "60 min",
+          "order": 6
+        },
+        {
+          "id": "vue-pwa",
+          "title": "PWA & Native Install",
+          "titleFa": "اپلیکیشن‌های PWA",
+          "difficulty": "expert",
+          "estimatedTime": "55 min",
+          "order": 7
         }
       ]
     }
