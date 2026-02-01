@@ -91,6 +91,9 @@ import {
   performanceOptimizationLesson,
   errorBoundariesLesson,
   portalsLesson,
+  actionsModernFormsLesson,
+  optimisticUILesson,
+  useAPIResourcesLesson,
 } from './react-intermediate';
 
 // React Advanced
@@ -101,6 +104,8 @@ import {
   serverComponentsLesson,
   codeSplittingLesson,
   testingReactLesson,
+  reactCompilerLesson,
+  activityApiLesson,
 } from './react-advanced';
 
 // React Expert
@@ -249,6 +254,9 @@ export const lessons = {
   'performance-optimization': performanceOptimizationLesson,
   'error-boundaries': errorBoundariesLesson,
   'portals': portalsLesson,
+  'actions-modern-forms': actionsModernFormsLesson,
+  'optimistic-ui': optimisticUILesson,
+  'use-api-resources': useAPIResourcesLesson,
 
   // React Advanced
   'react-router': reactRouterLesson,
@@ -257,6 +265,8 @@ export const lessons = {
   'server-components': serverComponentsLesson,
   'code-splitting': codeSplittingLesson,
   'testing-react': testingReactLesson,
+  'react-compiler': reactCompilerLesson,
+  'activity-api': activityApiLesson,
 
   // React Expert
   'advanced-patterns': advancedPatternsLesson,

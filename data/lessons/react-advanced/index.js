@@ -1,9 +1,11 @@
-import reactRouterLesson from './react-router';
-import stateManagementLesson from './state-management';
-import dataFetchingLesson from './data-fetching';
-import serverComponentsLesson from './server-components';
-import codeSplittingLesson from './code-splitting';
-import testingReactLesson from './testing-react';
+import reactRouterLesson from './react-router.js';
+import stateManagementLesson from './state-management.js';
+import dataFetchingLesson from './data-fetching.js';
+import serverComponentsLesson from './server-components.js';
+import codeSplittingLesson from './code-splitting.js';
+import testingReactLesson from './testing-react.js';
+import reactCompilerLesson from './react-compiler.js';
+import activityApiLesson from './activity-api.js';
 
 export {
     reactRouterLesson,
@@ -12,4 +14,6 @@ export {
     serverComponentsLesson,
     codeSplittingLesson,
     testingReactLesson,
+    reactCompilerLesson,
+    activityApiLesson,
 };

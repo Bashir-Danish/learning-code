@@ -1,6 +1,6 @@
-import React from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
-const TechnologyContext = React.createContext();
+const TechnologyContext = createContext();
 
 export const TECHNOLOGIES = [
     { id: 'algorithms', name: 'Algorithms', icon: 'Binary', color: '#6366F1' },
@@ -11,12 +11,17 @@ export const TECHNOLOGIES = [
 ];
 
 export function TechnologyProvider({ children }) {
-    const [activeTechnology, setActiveTechnology] = React.useState(() => {
-        return localStorage.getItem('activeTechnology') || 'algorithms';
+    const [activeTechnology, setActiveTechnology] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('activeTechnology') || 'algorithms';
+        }
+        return 'algorithms';
     });
 
-    React.useEffect(() => {
-        localStorage.setItem('activeTechnology', activeTechnology);
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('activeTechnology', activeTechnology);
+        }
     }, [activeTechnology]);
 
     return (
@@ -27,7 +32,7 @@ export function TechnologyProvider({ children }) {
 }
 
 export function useTechnology() {
-    const context = React.useContext(TechnologyContext);
+    const context = useContext(TechnologyContext);
     if (!context) {
         throw new Error('useTechnology must be used within a TechnologyProvider');
     }

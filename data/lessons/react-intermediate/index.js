@@ -1,9 +1,12 @@
-import lifecycleUseeffectLesson from './lifecycle-useeffect';
-import contextApiLesson from './context-api';
-import customHooksLesson from './custom-hooks';
-import performanceOptimizationLesson from './performance-optimization';
-import errorBoundariesLesson from './error-boundaries';
-import portalsLesson from './portals';
+import lifecycleUseeffectLesson from './lifecycle-useeffect.js';
+import contextApiLesson from './context-api.js';
+import customHooksLesson from './custom-hooks.js';
+import performanceOptimizationLesson from './performance-optimization.js';
+import errorBoundariesLesson from './error-boundaries.js';
+import portalsLesson from './portals.js';
+import actionsModernFormsLesson from './actions-modern-forms.js';
+import optimisticUILesson from './optimistic-ui.js';
+import useAPIResourcesLesson from './use-api-resources.js';
 
 export {
     lifecycleUseeffectLesson,
@@ -12,4 +15,7 @@ export {
     performanceOptimizationLesson,
     errorBoundariesLesson,
     portalsLesson,
+    actionsModernFormsLesson,
+    optimisticUILesson,
+    useAPIResourcesLesson,
 };

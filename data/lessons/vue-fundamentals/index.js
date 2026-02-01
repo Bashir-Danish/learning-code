@@ -1,9 +1,9 @@
-import introSfcLesson from './intro-sfc';
-import reactivityRefLesson from './reactivity-ref';
-import lifecycleWatchersLesson from './lifecycle-watchers';
-import componentCompositionLesson from './component-composition';
+import { introSfcLesson } from './intro-sfc';
+import { reactivityRefLesson } from './reactivity-ref';
+import { lifecycleWatchersLesson } from './lifecycle-watchers';
+import { componentCompositionLesson } from './component-composition';
 import { formsValidationLesson } from './forms-validation';
-import { builtinComponentsLesson } from './builtin-components';
+import { builtinComponentsLesson } from './builtin-components-expanded';
 import { directivesBuiltinLesson } from './directives-builtin';
 import { debuggingLesson } from './debugging';
 

@@ -3,7 +3,7 @@ export const reactivityRefLesson = {
   title: 'Reactivity (ref, reactive, computed)',
   titleFa: 'سیستم واکنش‌گرایی (Reactive)',
   difficulty: 'easy',
-  estimatedTime: '45 min',
+  estimatedTime: '120 min',
 
   content: `
 # Vue Reactivity System

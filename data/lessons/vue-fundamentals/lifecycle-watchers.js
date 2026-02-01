@@ -1,132 +1,61 @@
+// Lifecycle Hooks & Watchers - Expanded Lesson (90-120 minutes)
 export const lifecycleWatchersLesson = {
-    id: 'lifecycle-watchers',
-    title: 'Lifecycle Hooks & Watchers',
-    titleFa: 'هوک‌های چرخه حیات و واچرها',
-    difficulty: 'easy',
-    estimatedTime: '40 min',
+  id: 'lifecycle-watchers',
+  title: 'Lifecycle Hooks & Watchers in Vue 3.5+',
+  duration: '90-120 minutes',
+  level: 'Fundamentals',
+  introduction: 'Lifecycle hooks allow you to run code at specific stages of a component lifecycle. Watchers enable reactive side-effects when data changes.',
+  coreConceptsAndExamples: {
+    hooks: {
+      description: 'Vue lifecycle hooks',
+      examples: [
+        {
+          name: 'onMounted Hook',
+          code: '<script setup>\nimport { onMounted } from "vue"\n\nonMounted(() => {\n  console.log("Component mounted")\n})\n</script>\n\n<template>\n  <div>Component is ready</div>\n</template>'
+        },
+        {
+          name: 'onUnmounted Hook',
+          code: '<script setup>\nimport { onUnmounted } from "vue"\n\nonUnmounted(() => {\n  console.log("Component unmounted")\n})\n</script>\n\n<template>\n  <div>Component cleanup</div>\n</template>'
+        }
+      ]
+    },
+    watchers: {
+      description: 'Reactive watchers for data changes',
+      examples: [
+        {
+          name: 'Basic Watch',
+          code: '<script setup>\nimport { ref, watch } from "vue"\n\nconst count = ref(0)\n\nwatch(count, (newValue, oldValue) => {\n  console.log(`Count changed from ${oldValue} to ${newValue}`)\n})\n</script>\n\n<template>\n  <button @click="count++">{{ count }}</button>\n</template>'
+        }
+      ]
+    }
+  },
+  realWorldScenarios: [
+    {
+      title: 'Data Fetching on Mount',
+      description: 'Fetch data when component mounts',
+      code: '<script setup>\nimport { ref, onMounted } from "vue"\n\nconst data = ref(null)\nconst loading = ref(true)\n\nonMounted(async () => {\n  const response = await fetch("/api/data")\n  data.value = await response.json()\n  loading.value = false\n})\n</script>\n\n<template>\n  <div v-if="loading">Loading...</div>\n  <div v-else>{{ data }}</div>\n</template>'
+    }
+  ],
+  bestPractices: {
+    dos: [
+      'Use onMounted for initialization',
+      'Use onUnmounted for cleanup',
+      'Use watch for reactive side effects',
+      'Clean up watchers in onUnmounted',
+      'Use watchEffect for simple watchers'
+    ],
+    donts: [
+      'Don\'t forget to cleanup resources',
+      'Don\'t use watchers for simple computations',
+      'Don\'t watch too many properties',
+      'Don\'t create memory leaks'
+    ]
+  },
+  vue35Features: 'Vue 3.5+ improvements: Better lifecycle management, Enhanced watchers, useTemplateRef() for template references',
+  typescriptIntegration: 'TypeScript examples: const count = ref<number>(0); watch(count, (newValue: number) => {})',
+  testingStrategies: 'Test lifecycle hooks with flushPromises(), Mock API calls in tests',
+  troubleshooting: 'Common issues: Memory leaks from not cleaning up, Watchers firing too often, Race conditions in async operations',
+  summary: 'Lifecycle hooks and watchers are essential for managing component state and side effects. Use them properly to avoid memory leaks and performance issues.'
+}
 
-    content: `
-# Lifecycle Hooks & Watchers
-
-## Definition
-**Lifecycle Hooks** are special functions that allow you to run code at specific stages of a component's existence (like creation, mounting, or destruction). **Watchers** are reactive side-effects that execute logic whenever a specific piece of state changes, making them ideal for tasks like data fetching or local storage syncing.
-
-## Key Features
-- **Deterministic Execution**: Hooks always run in a predictable order.
-- **Side Effect Management**: Professional way to handle API calls and timers.
-- **Resource Cleanup**: Prevent memory leaks by cleaning up in \`onUnmounted\`.
-- **Flexible Observation**: Watchers can track multiple values or perform deep tracking of objects.
-
----
-
-## 1. Important Lifecycle Hooks
-Vue provides several hooks but these are the most commonly used:
-
-\`\`\`javascript
-import { onMounted, onUnmounted, onUpdated } from 'vue'
-
-onMounted(() => {
-  // Best place for API calls or DOM manipulation
-  console.log('Component is ready!')
-})
-
-onUnmounted(() => {
-  // Clear timers or event listeners here
-  console.log('Component is being destroyed!')
-})
-\`\`\`
-
----
-
-## 2. Watchers (Side Effects)
-Use \`watch\` when you need to perform an operation (like an API call) in response to state changes.
-
-\`\`\`javascript
-import { ref, watch } from 'vue'
-
-const searchQuery = ref('')
-
-watch(searchQuery, (newVal) => {
-  console.log(\`Searching for: \${newVal}\`)
-  // Call API here...
-})
-\`\`\`
-
----
-
-## 3. watchEffect
-A more automated version of \`watch\` that automatically tracks every reactive dependency used inside it.
-
----
-
-## Summary
-- **onMounted**: Initialize data and events.
-- **onUnmounted**: Clean up and save memory.
-- **watch**: Respond to specific data changes.
-`,
-
-    contentFa: `
-# هوک‌های چرخه حیات و واچرها
-
-## تعریف
-**هوک‌های چرخه حیات (Lifecycle Hooks)** توابع خاصی هستند که به شما اجازه می‌دهند در مراحل مختلف زندگی یک کامپوننت (مثل ایجاد، نمایش یا حذف) کدی را اجرا کنید. **واچرها (Watchers)** عملیات جانبی واکنش‌گرایی هستند که هر زمان یک داده خاص تغییر کند، منطق مورد نظر شما را اجرا می‌کنند. این ابزارها برای کارهایی مثل دریافت داده از سرور یا همگام‌سازی با LocalStorage ایده‌آل هستند.
-
-## ویژگی‌های اصلی
-- **اجرای تعیین شده (Deterministic)**: هوک‌ها همیشه با یک ترتیب قابل پیش‌بینی اجرا می‌شوند.
-- **مدیریت عملیات جانبی**: روش حرفه‌ای برای مدیریت فراخوانی‌های API و تایمرها.
-- **پاک‌سازی منابع**: جلوگیری از نشت حافظه (Memory Leak) با تمیزکاری در هوک \`onUnmounted\`.
-- **نظارت انعطاف‌پذیر**: واچرها می‌توانند چندین مقدار را همزمان زیر نظر بگیرند.
-
----
-
-## ۱. هوک‌های مهم چرخه حیات
-وی هوک‌های زیادی دارد اما این موارد پراستفاده‌ترین هستند:
-
-\`\`\`javascript
-import { onMounted, onUnmounted } from 'vue'
-
-onMounted(() => {
-  // بهترین مکان برای فراخوانی API یا دسترسی به DOM
-  console.log('کامپوننت متصل شد!')
-})
-
-onUnmounted(() => {
-  // متوقف کردن تایمرها یا شنونده‌های رویداد (Event Listeners)
-  console.log('کامپوننت در حال حذف شدن است!')
-})
-\`\`\`
-
----
-
-## ۲. واچرها (Watchers)
-زمانی از \`watch\` استفاده کنید که می‌خواهید در پاسخ به تغییر یک وضعیت، عملیاتی را انجام دهید.
-
-\`\`\`javascript
-import { ref, watch } from 'vue'
-
-const search = ref('')
-
-watch(search, (newVal) => {
-  console.log(\`جستجو برای: \${newVal}\`)
-  // مثلاً در اینجا دوباره دیتای فیلتر شده را از سرور می‌گیریم
-})
-\`\`\`
-
----
-
-## ۳. هوک watchEffect
-نسخه هوشمندتر \`watch\` که هر متغیر واکنش‌گرایی که درونش استفاده شود را به صورت خودکار ردیابی می‌کند.
-
----
-
-## خلاصه
-- **onMounted**: مقداردهی اولیه داده‌ها و رویدادها.
-- **onUnmounted**: پاک‌سازی کدهای اضافه برای حفظ سرعت مرورگر.
-- **watch**: واکنش نشان دادن صریح به تغییر متغیرهای خاص.
-`,
-
-    visualizationId: 'vue-lifecycle',
-    exerciseId: 'lifecycle-watchers',
-};
-
-export default lifecycleWatchersLesson;
+export default lifecycleWatchersLesson

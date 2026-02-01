@@ -745,8 +745,8 @@
       "nameFa": "۱۴. ری‌اکت متوسطه",
       "icon": "Layers",
       "color": "#61DAFB",
-      "description": "Lifecycle, Context, and performance optimization techniques",
-      "descriptionFa": "چرخه حیات، Context و تکنیک‌های بهینه‌سازی عملکرد",
+      "description": "Lifecycle, Context, React 19 Actions, Optimistic UI, and performance optimization",
+      "descriptionFa": "چرخه حیات، Context، Actions ری‌اکت ۱۹، رابط کاربری خوش‌بینانه و بهینه‌سازی عملکرد",
       "order": 14,
       "technology": "react",
       "lessons": [
@@ -756,6 +756,8 @@
           "titleFa": "چرخه حیات",
           "difficulty": "medium",
           "estimatedTime": "50 min",
+          "hasVisualization": false,
+          "hasExercise": true,
           "order": 1
         },
         {
@@ -764,6 +766,8 @@
           "titleFa": "Context API",
           "difficulty": "medium",
           "estimatedTime": "45 min",
+          "hasVisualization": false,
+          "hasExercise": true,
           "order": 2
         },
         {
@@ -772,15 +776,49 @@
           "titleFa": "هوک‌های سفارشی",
           "difficulty": "medium",
           "estimatedTime": "40 min",
+          "hasVisualization": false,
+          "hasExercise": true,
           "order": 3
+        },
+        {
+          "id": "actions-modern-forms",
+          "title": "Actions & Modern Form Handling",
+          "titleFa": "Actions و مدیریت فرم‌های مدرن",
+          "difficulty": "medium",
+          "estimatedTime": "75 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 4
+        },
+        {
+          "id": "optimistic-ui",
+          "title": "Optimistic UI with useOptimistic",
+          "titleFa": "رابط کاربری خوش‌بینانه با useOptimistic",
+          "difficulty": "medium",
+          "estimatedTime": "60 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 5
+        },
+        {
+          "id": "use-api-resources",
+          "title": "Resource Loading with use API",
+          "titleFa": "بارگذاری منابع با use API",
+          "difficulty": "medium",
+          "estimatedTime": "70 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 6
         },
         {
           "id": "performance-optimization",
           "title": "Performance Optimization",
           "titleFa": "بهینه‌سازی",
           "difficulty": "medium",
-          "estimatedTime": "55 min",
-          "order": 4
+          "estimatedTime": "70 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 7
         },
         {
           "id": "error-boundaries",
@@ -788,7 +826,9 @@
           "titleFa": "مدیریت خطا",
           "difficulty": "medium",
           "estimatedTime": "30 min",
-          "order": 5
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 8
         },
         {
           "id": "portals",
@@ -796,7 +836,9 @@
           "titleFa": "پورتال‌ها",
           "difficulty": "medium",
           "estimatedTime": "25 min",
-          "order": 6
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 9
         }
       ]
     },
@@ -806,8 +848,8 @@
       "nameFa": "۱۵. ری‌اکت پیشرفته",
       "icon": "Zap",
       "color": "#61DAFB",
-      "description": "Router, State Management, and Data Fetching",
-      "descriptionFa": "روتر، مدیریت وضعیت و دریافت داده‌ها",
+      "description": "Router, State Management, Data Fetching, Server Components, and React 19 Compiler",
+      "descriptionFa": "روتر، مدیریت وضعیت، دریافت داده‌ها، کامپوننت‌های سروری و کامپایلر ری‌اکت ۱۹",
       "order": 15,
       "technology": "react",
       "lessons": [
@@ -817,6 +859,8 @@
           "titleFa": "مسیربابی",
           "difficulty": "hard",
           "estimatedTime": "60 min",
+          "hasVisualization": false,
+          "hasExercise": true,
           "order": 1
         },
         {
@@ -825,6 +869,8 @@
           "titleFa": "مدیریت وضعیت",
           "difficulty": "hard",
           "estimatedTime": "60 min",
+          "hasVisualization": false,
+          "hasExercise": true,
           "order": 2
         },
         {
@@ -832,7 +878,9 @@
           "title": "Data Fetching",
           "titleFa": "دریافت داده",
           "difficulty": "hard",
-          "estimatedTime": "55 min",
+          "estimatedTime": "75 min",
+          "hasVisualization": false,
+          "hasExercise": true,
           "order": 3
         },
         {
@@ -840,8 +888,30 @@
           "title": "Server Components",
           "titleFa": "کامپوننت‌های سروری",
           "difficulty": "hard",
-          "estimatedTime": "45 min",
+          "estimatedTime": "60 min",
+          "hasVisualization": false,
+          "hasExercise": true,
           "order": 4
+        },
+        {
+          "id": "react-compiler",
+          "title": "React Compiler & Automatic Optimization",
+          "titleFa": "کامپایلر ری‌اکت و بهینه‌سازی خودکار",
+          "difficulty": "hard",
+          "estimatedTime": "65 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 5
+        },
+        {
+          "id": "activity-api",
+          "title": "Activity API & Background Loading",
+          "titleFa": "Activity API و بارگذاری پس‌زمینه",
+          "difficulty": "hard",
+          "estimatedTime": "55 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 6
         },
         {
           "id": "code-splitting",
@@ -849,7 +919,9 @@
           "titleFa": "جداسازی کد",
           "difficulty": "hard",
           "estimatedTime": "35 min",
-          "order": 5
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 7
         },
         {
           "id": "testing-react",
@@ -857,7 +929,9 @@
           "titleFa": "تست‌نویسی",
           "difficulty": "hard",
           "estimatedTime": "55 min",
-          "order": 6
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 8
         }
       ]
     },

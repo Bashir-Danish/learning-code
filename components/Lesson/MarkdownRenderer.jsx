@@ -1,7 +1,30 @@
 ﻿import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+// Register commonly used languages to ensure highlighting works in the browser build
+import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
+import ts from 'react-syntax-highlighter/dist/esm/languages/prism/typescript';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+import markup from 'react-syntax-highlighter/dist/esm/languages/prism/markup';
+import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
+import json from 'react-syntax-highlighter/dist/esm/languages/prism/json';
+import bash from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
+import python from 'react-syntax-highlighter/dist/esm/languages/prism/python';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
+SyntaxHighlighter.registerLanguage('typescript', ts);
+SyntaxHighlighter.registerLanguage('jsx', jsx);
+SyntaxHighlighter.registerLanguage('tsx', tsx);
+SyntaxHighlighter.registerLanguage('markup', markup);
+SyntaxHighlighter.registerLanguage('html', markup);
+SyntaxHighlighter.registerLanguage('vue', markup);
+SyntaxHighlighter.registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage('json', json);
+SyntaxHighlighter.registerLanguage('bash', bash);
+SyntaxHighlighter.registerLanguage('python', python);
 
 export default function MarkdownRenderer({ content, className = '', isRTL = false }) {
   return (
@@ -11,13 +34,35 @@ export default function MarkdownRenderer({ content, className = '', isRTL = fals
         components={{
           code({ inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
-            const language = match ? match[1] : '';
-            
-            if (!inline && language) {
+            let language = match ? match[1] : '';
+
+            // Map some common language ids to Prism-supported ones
+            const langMap = {
+              vue: 'markup',
+              html: 'markup',
+              xml: 'markup',
+              js: 'javascript',
+              ts: 'typescript',
+              jsx: 'jsx',
+              tsx: 'tsx'
+            };
+
+            if (language && langMap[language]) language = langMap[language];
+
+            // If it's a fenced block (not inline) render with SyntaxHighlighter.
+            // If language is missing, fall back to 'markup' to ensure highlighting.
+            if (!inline) {
+              let usedLang = language || 'markup';
+
+              // If the block is a Vue SFC / HTML that contains a <script> tag, prefer JS highlighting
+              const codeStr = String(children);
+              if (usedLang === 'markup' && /<script[\s>]/i.test(codeStr)) {
+                usedLang = 'javascript';
+              }
               return (
                 <SyntaxHighlighter
                   style={oneDark}
-                  language={language}
+                  language={usedLang}
                   PreTag="div"
                   className="rounded-lg !my-4"
                   customStyle={{ direction: 'ltr', textAlign: 'left' }}
@@ -27,7 +72,7 @@ export default function MarkdownRenderer({ content, className = '', isRTL = fals
                 </SyntaxHighlighter>
               );
             }
-            
+
             return (
               <code
                 className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-pink-600"

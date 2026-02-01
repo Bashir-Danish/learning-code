@@ -5,6 +5,7 @@ import LessonPage from './pages/LessonPage';
 import VisualizerPage from './pages/VisualizerPage';
 import ExercisePage from './pages/ExercisePage';
 import DebuggerPage from './pages/DebuggerPage';
+import AuditPage from './pages/AuditPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/visualizer/:algorithmId" element={<VisualizerPage />} />
         <Route path="/exercise/:exerciseId" element={<ExercisePage />} />
         <Route path="/debugger" element={<DebuggerPage />} />
+        <Route path="/audit" element={<AuditPage />} />
       </Routes>
     </Layout>
   );

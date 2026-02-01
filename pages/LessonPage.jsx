@@ -163,6 +163,33 @@ export default function LessonPage() {
     setActiveTab('learn');
   }, [lessonId, exercise?.starterCode]);
 
+  // Build fallback markdown when `lesson.content` is missing (some lessons store structured fields)
+  const buildFallbackContent = (ln) => {
+    if (!ln) return '';
+    let md = '';
+    if (ln.introduction) md += `## Introduction\n\n${ln.introduction}\n\n`;
+    if (ln.coreConceptsAndExamples) {
+      md += '## Core Concepts\n\n';
+      for (const [sectionKey, section] of Object.entries(ln.coreConceptsAndExamples)) {
+        md += `### ${section.description || sectionKey}\n\n`;
+        if (section.examples && Array.isArray(section.examples)) {
+          section.examples.forEach((ex) => {
+            if (ex.name) md += `#### ${ex.name}\n\n`;
+            if (ex.code) md += '```vue\n' + ex.code + '\n```\n\n';
+          });
+        }
+      }
+    }
+    if (ln.realWorldScenarios && Array.isArray(ln.realWorldScenarios)) {
+      md += '## Real World Examples\n\n';
+      ln.realWorldScenarios.forEach((r) => {
+        md += `### ${r.title}\n\n${r.description || ''}\n\n`;
+        if (r.code) md += '```vue\n' + r.code + '\n```\n\n';
+      });
+    }
+    return md;
+  };
+
   const handleRunTests = useCallback(() => {
     if (!exercise) return;
     setIsRunning(true);
@@ -355,7 +382,9 @@ export default function LessonPage() {
               >
                 <div className="prose prose-sm max-w-none">
                   <MarkdownRenderer
-                    content={contentLang === 'fa' ? lesson.contentFa : lesson.content}
+                    content={contentLang === 'fa'
+                      ? (lesson.contentFa || buildFallbackContent(lesson))
+                      : (lesson.content || buildFallbackContent(lesson))}
                     isRTL={contentLang === 'fa'}
                   />
                 </div>
