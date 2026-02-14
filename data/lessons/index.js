@@ -162,6 +162,92 @@ import {
   vuePwaLesson,
 } from './vue-expert';
 
+// Database Fundamentals
+import {
+  mysqlServerBasics,
+  mariadbServerBasics,
+  nodejsMysqlConnection,
+  sqlSelectQueries,
+  sqlInsertUpdateDelete,
+  sqlJoins,
+  sqlAggregateFunctions,
+  sqlAdvancedQueries,
+  databaseDesignTables,
+  databaseRelationships,
+  databaseIndexes,
+  databaseNormalization,
+  sqlSecurityBestPractices,
+  queryOptimization,
+} from './database-fundamentals';
+
+// PHP Fundamentals
+import {
+  phpIntroSetupLesson,
+  phpSyntaxTypesLesson,
+  phpControlFlowLesson,
+  phpFunctionsLesson,
+  phpArraysStringsDeepDiveLesson,
+  phpErrorsExceptionsLesson,
+  phpFilesDatesJsonLesson,
+  php84WhatsNewLesson,
+} from './php-fundamentals';
+
+// PHP Intermediate
+import {
+  phpOopBasicsLesson,
+  phpOopModernLesson,
+  phpHttpFormsSessionsLesson,
+  phpPdoMysqlSecurityLesson,
+  phpComposerPsrTestingLesson,
+} from './php-intermediate';
+
+// PHP Advanced
+import {
+  phpAdvancedModernLanguageLesson,
+  phpAdvancedSolidPatternsLesson,
+  phpAdvancedTestingLesson,
+  phpAdvancedSecurityHardeningLesson,
+  phpAdvancedRestApiDesignLesson,
+  phpAdvancedAuthSessionsJwtLesson,
+  phpAdvancedPdoPatternsLesson,
+  phpAdvancedCachingOpcacheLesson,
+  phpAdvancedDeploymentProductionLesson,
+} from './php-advanced';
+
+// WordPress (inside PHP track)
+import {
+  wpIntroSetupLocalLesson,
+  wpThemeAnatomyLesson,
+  wpHooksActionsFiltersLesson,
+  wpSecurityLesson,
+} from './php-wordpress';
+
+// Laravel (inside PHP track)
+import {
+  laravel12IntroSetupLesson,
+  laravelProjectStructureLifecycleLesson,
+  laravelRoutingMiddlewareLesson,
+  laravelControllersRequestsValidationLesson,
+  laravelErrorHandlingApiLesson,
+  laravelDatabaseMigrationsSeedingLesson,
+  laravelEloquentModelsCastsLesson,
+  laravelEloquentRelationshipsLesson,
+  laravelEloquentPerformanceLesson,
+  laravelApiResourcesPaginationLesson,
+  laravelAuthSanctumLesson,
+  laravelTestingApisLesson,
+  laravelAuthorizationPoliciesGatesLesson,
+  laravelSecurityHardeningLesson,
+  laravelQueuesJobsLesson,
+  laravelSchedulingLesson,
+  laravelEventsListenersLesson,
+  laravelNotificationsMailLesson,
+  laravelStorageUploadsLesson,
+  laravelCachingPerformanceLesson,
+  laravelHttpClientIntegrationsLesson,
+  laravelDeploymentProductionLesson,
+} from './php-laravel';
+
 // Lesson registry
 export const lessons = {
   // Foundations
@@ -311,6 +397,78 @@ export const lessons = {
   'vue-microfrontends': microFrontendsLesson,
   'vue-mobile': mobileVueLesson,
   'vue-pwa': vuePwaLesson,
+
+  // Database Fundamentals
+  'mysql-server-basics': mysqlServerBasics,
+  'mariadb-server-basics': mariadbServerBasics,
+  'nodejs-mysql-connection': nodejsMysqlConnection,
+  'sql-select-queries': sqlSelectQueries,
+  'sql-insert-update-delete': sqlInsertUpdateDelete,
+  'sql-joins': sqlJoins,
+  'sql-aggregate-functions': sqlAggregateFunctions,
+  'sql-advanced-queries': sqlAdvancedQueries,
+  'database-design-tables': databaseDesignTables,
+  'database-relationships': databaseRelationships,
+  'database-indexes': databaseIndexes,
+  'database-normalization': databaseNormalization,
+  'sql-security-best-practices': sqlSecurityBestPractices,
+  'query-optimization': queryOptimization,
+
+  // PHP
+  'php-intro-setup': phpIntroSetupLesson,
+  'php-syntax-types': phpSyntaxTypesLesson,
+  'php-control-flow': phpControlFlowLesson,
+  'php-functions': phpFunctionsLesson,
+  'php-arrays-strings-deep-dive': phpArraysStringsDeepDiveLesson,
+  'php-oop-basics': phpOopBasicsLesson,
+  'php-oop-modern': phpOopModernLesson,
+  'php-errors-exceptions': phpErrorsExceptionsLesson,
+  'php-files-dates-json': phpFilesDatesJsonLesson,
+  'php-http-forms-sessions': phpHttpFormsSessionsLesson,
+  'php-pdo-mysql-security': phpPdoMysqlSecurityLesson,
+  'php-composer-psr-testing': phpComposerPsrTestingLesson,
+  'php-84-whats-new': php84WhatsNewLesson,
+
+  // PHP Advanced
+  'php-advanced-modern-language': phpAdvancedModernLanguageLesson,
+  'php-advanced-solid-patterns': phpAdvancedSolidPatternsLesson,
+  'php-advanced-testing': phpAdvancedTestingLesson,
+  'php-advanced-security-hardening': phpAdvancedSecurityHardeningLesson,
+  'php-advanced-rest-api-design': phpAdvancedRestApiDesignLesson,
+  'php-advanced-auth-sessions-jwt': phpAdvancedAuthSessionsJwtLesson,
+  'php-advanced-pdo-patterns': phpAdvancedPdoPatternsLesson,
+  'php-advanced-caching-opcache': phpAdvancedCachingOpcacheLesson,
+  'php-advanced-deployment-production': phpAdvancedDeploymentProductionLesson,
+
+  // WordPress (PHP track)
+  'wp-intro-setup-local': wpIntroSetupLocalLesson,
+  'wp-theme-anatomy': wpThemeAnatomyLesson,
+  'wp-hooks-actions-filters': wpHooksActionsFiltersLesson,
+  'wp-security': wpSecurityLesson,
+
+  // Laravel (PHP track)
+  'laravel-12-intro-setup': laravel12IntroSetupLesson,
+  'laravel-project-structure-lifecycle': laravelProjectStructureLifecycleLesson,
+  'laravel-routing-middleware': laravelRoutingMiddlewareLesson,
+  'laravel-controllers-requests-validation': laravelControllersRequestsValidationLesson,
+  'laravel-error-handling-api': laravelErrorHandlingApiLesson,
+  'laravel-database-migrations-seeding': laravelDatabaseMigrationsSeedingLesson,
+  'laravel-eloquent-models-casts': laravelEloquentModelsCastsLesson,
+  'laravel-eloquent-relationships': laravelEloquentRelationshipsLesson,
+  'laravel-eloquent-performance': laravelEloquentPerformanceLesson,
+  'laravel-api-resources-pagination': laravelApiResourcesPaginationLesson,
+  'laravel-auth-sanctum': laravelAuthSanctumLesson,
+  'laravel-testing-apis': laravelTestingApisLesson,
+  'laravel-authorization-policies-gates': laravelAuthorizationPoliciesGatesLesson,
+  'laravel-security-hardening': laravelSecurityHardeningLesson,
+  'laravel-queues-jobs': laravelQueuesJobsLesson,
+  'laravel-scheduling': laravelSchedulingLesson,
+  'laravel-events-listeners': laravelEventsListenersLesson,
+  'laravel-notifications-mail': laravelNotificationsMailLesson,
+  'laravel-storage-uploads': laravelStorageUploadsLesson,
+  'laravel-caching-performance': laravelCachingPerformanceLesson,
+  'laravel-http-client-integrations': laravelHttpClientIntegrationsLesson,
+  'laravel-deployment-production': laravelDeploymentProductionLesson,
 };
 
 export function getLesson(lessonId) {

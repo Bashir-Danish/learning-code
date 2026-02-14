@@ -1,4 +1,4 @@
-const CACHE_NAME = 'algo-learn-v1';
+const CACHE_NAME = 'algo-learn-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -30,6 +30,23 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') {
+    return;
+  }
+
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put('/index.html', responseToCache);
+          });
+          return response;
+        })
+        .catch(() => {
+          return caches.match('/index.html');
+        })
+    );
     return;
   }
 

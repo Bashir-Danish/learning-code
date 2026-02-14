@@ -1,0 +1,19 @@
+{
+  "name": "Algorithm Learning Dashboard",
+  "short_name": "AlgoLearn",
+  "description": "Learn algorithms and data structures for technical interviews",
+  "theme_color": "#7c3aed",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

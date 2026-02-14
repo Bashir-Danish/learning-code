@@ -1,0 +1,84 @@
+{
+  "freshLaravel11": {
+    "tree": "app/\n├── Http/\n│   ├── Controllers/\n│   │   └── Controller.php\n│   └── Middleware/\n├── Models/\n│   └── User.php\n├── Providers/\n│   └── AppServiceProvider.php\nbootstrap/\n├── app.php\n└── providers.php\nconfig/\n├── app.php\n├── auth.php\n├── cache.php\n├── database.php\n├── filesystems.php\n├── logging.php\n├── mail.php\n├── queue.php\n├── services.php\n└── session.php\ndatabase/\n├── factories/\n│   └── UserFactory.php\n├── migrations/\n│   ├── 0001_01_01_000000_create_users_table.php\n│   ├── 0001_01_01_000001_create_cache_table.php\n│   └── 0001_01_01_000002_create_jobs_table.php\n└── seeders/\n    └── DatabaseSeeder.php\npublic/\n├── index.php\n└── .htaccess\nresources/\n├── css/\n├── js/\n└── views/\n    └── welcome.blade.php\nroutes/\n├── console.php\n└── web.php\nstorage/\n├── app/\n├── framework/\n└── logs/\ntests/\n├── Feature/\n│   └── ExampleTest.php\n└── Unit/\n    └── ExampleTest.php\n.env\n.env.example\n.gitignore\nartisan\ncomposer.json\npackage.json\nphpunit.xml\nvite.config.js",
+    "explanations": {
+      "app/": "Core application code (models, controllers, middleware, providers)",
+      "app/Http/": "HTTP layer (controllers, middleware, requests, resources)",
+      "app/Http/Controllers/": "Controller classes for handling requests",
+      "app/Http/Middleware/": "Custom middleware for request filtering",
+      "app/Models/": "Eloquent model classes representing database tables",
+      "app/Providers/": "Service providers for bootstrapping application services",
+      "bootstrap/": "Application bootstrapping files",
+      "bootstrap/app.php": "Application builder configuration (Laravel 11 new pattern)",
+      "config/": "Configuration files for various services",
+      "database/": "Database-related files (migrations, seeders, factories)",
+      "database/factories/": "Model factories for generating test data",
+      "database/migrations/": "Database schema migrations",
+      "database/seeders/": "Database seeders for populating data",
+      "public/": "Publicly accessible files (entry point, assets)",
+      "public/index.php": "Application entry point",
+      "resources/": "Views, raw assets (CSS, JS)",
+      "routes/": "Route definitions",
+      "routes/web.php": "Web routes (session, CSRF protection)",
+      "routes/console.php": "Artisan console commands",
+      "storage/": "Application storage (logs, cache, uploads)",
+      "tests/": "Automated tests",
+      ".env": "Environment configuration (not in version control)",
+      "artisan": "Command-line interface",
+      "composer.json": "PHP dependencies"
+    }
+  },
+  "apiRoutes": {
+    "tree": "routes/\n├── api.php\n├── console.php\n└── web.php",
+    "explanations": {
+      "routes/api.php": "API routes (stateless, token-based auth, no CSRF). Install with: php artisan install:api"
+    }
+  },
+  "controllers": {
+    "tree": "app/Http/Controllers/\n├── Api/\n│   ├── UserController.php\n│   └── PostController.php\n├── Controller.php\n└── Web/\n    └── HomeController.php",
+    "explanations": {
+      "app/Http/Controllers/": "All controller classes",
+      "app/Http/Controllers/Api/": "API-specific controllers (return JSON)",
+      "app/Http/Controllers/Web/": "Web controllers (return views)",
+      "app/Http/Controllers/Controller.php": "Base controller class"
+    }
+  },
+  "requests": {
+    "tree": "app/Http/Requests/\n├── StoreUserRequest.php\n└── UpdateUserRequest.php",
+    "explanations": {
+      "app/Http/Requests/": "Form request validation classes"
+    }
+  },
+  "resources": {
+    "tree": "app/Http/Resources/\n├── UserResource.php\n└── UserCollection.php",
+    "explanations": {
+      "app/Http/Resources/": "API resource classes for JSON transformation"
+    }
+  },
+  "policies": {
+    "tree": "app/Policies/\n├── UserPolicy.php\n└── PostPolicy.php",
+    "explanations": {
+      "app/Policies/": "Authorization policy classes"
+    }
+  },
+  "exceptions": {
+    "tree": "app/Exceptions/\n└── Handler.php",
+    "explanations": {
+      "app/Exceptions/": "Exception handling",
+      "app/Exceptions/Handler.php": "Global exception handler"
+    }
+  },
+  "jobs": {
+    "tree": "app/Jobs/\n├── ProcessPodcast.php\n└── SendEmailJob.php",
+    "explanations": {
+      "app/Jobs/": "Queueable job classes for async processing"
+    }
+  },
+  "events": {
+    "tree": "app/Events/\n├── UserRegistered.php\n└── OrderShipped.php\napp/Listeners/\n├── SendWelcomeEmail.php\n└── SendShipmentNotification.php",
+    "explanations": {
+      "app/Events/": "Event classes",
+      "app/Listeners/": "Event listener classes"
+    }
+  }
+}

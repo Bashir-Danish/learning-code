@@ -1,13 +1,15 @@
 import { useTechnology } from '../../contexts/TechnologyContext';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { Binary, Atom, Code, Server, Smartphone } from 'lucide-react';
+import { Binary, Atom, Code, Server, Smartphone, Database, Code2 } from 'lucide-react';
 
 const ICON_MAP = {
     Binary: Binary,
     Atom: Atom,
     Code: Code,
+    Code2: Code2,
     Server: Server,
-    Smartphone: Smartphone
+    Smartphone: Smartphone,
+    Database: Database
 };
 
 export default function TechnologySelector() {

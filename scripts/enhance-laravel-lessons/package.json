@@ -1,0 +1,20 @@
+{
+  "name": "laravel-lessons-enhancement",
+  "version": "1.0.0",
+  "description": "Enhancement system for Laravel lessons",
+  "type": "module",
+  "scripts": {
+    "enhance": "node src/index.js",
+    "enhance:single": "node src/index.js --lesson",
+    "enhance:dry-run": "node src/index.js --dry-run",
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "prettier": "^3.2.5"
+  },
+  "devDependencies": {
+    "fast-check": "^3.15.1"
+  }
+}

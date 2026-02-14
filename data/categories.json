@@ -1,4 +1,4 @@
-﻿{
+{
   "categories": [
     {
       "id": "foundations",
@@ -1269,6 +1269,551 @@
           "difficulty": "expert",
           "estimatedTime": "55 min",
           "order": 7
+        }
+      ]
+    },
+    {
+      "id": "php-fundamentals",
+      "name": "21. PHP Fundamentals",
+      "nameFa": ". مبانی PHP",
+      "icon": "BookOpen",
+      "color": "#777BB4",
+      "description": "Setup, language basics, functions, arrays/strings, errors, files/JSON, and PHP 8.4 highlights",
+      "descriptionFa": "راهاندازی مبانی زبان توابع آرایه/رشته خطاها فایل/JSON و نکات PHP 8.4",
+      "order": 21,
+      "technology": "php",
+      "lessons": [
+        {
+          "id": "php-intro-setup",
+          "title": "PHP Today + Setup (8.3/8.4)",
+          "titleFa": "PHP امروز + نصب و راهاندازی (./.)",
+          "difficulty": "easy",
+          "estimatedTime": "45 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 1
+        },
+        {
+          "id": "php-syntax-types",
+          "title": "Syntax, Types, Operators",
+          "titleFa": "سینتکس انواع عملگرها",
+          "difficulty": "easy",
+          "estimatedTime": "55 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 2
+        },
+        {
+          "id": "php-control-flow",
+          "title": "Control Flow: if/switch/match + loops",
+          "titleFa": "کنترل جریان: if/switch/match + حلقهها",
+          "difficulty": "easy",
+          "estimatedTime": "50 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 3
+        },
+        {
+          "id": "php-functions",
+          "title": "Functions, Closures, and Modules",
+          "titleFa": "توابع کلوزرها و ماژولها",
+          "difficulty": "easy",
+          "estimatedTime": "60 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 4
+        },
+        {
+          "id": "php-arrays-strings-deep-dive",
+          "title": "Arrays & Strings in Real Code",
+          "titleFa": "آرایهها و رشتهها در کد واقعی",
+          "difficulty": "easy",
+          "estimatedTime": "60 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 5
+        },
+        {
+          "id": "php-errors-exceptions",
+          "title": "Errors, Exceptions, and Debugging",
+          "titleFa": "خطاها exceptionها و دیباگ",
+          "difficulty": "easy",
+          "estimatedTime": "50 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 6
+        },
+        {
+          "id": "php-files-dates-json",
+          "title": "Files, Dates, JSON",
+          "titleFa": "فایلها تاریخ JSON",
+          "difficulty": "easy",
+          "estimatedTime": "55 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 7
+        },
+        {
+          "id": "php-84-whats-new",
+          "title": "Whats New in PHP 8.4",
+          "titleFa": "چه چیزهایی در PHP 8.4 جدید است",
+          "difficulty": "easy",
+          "estimatedTime": "35 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 8
+        }
+      ]
+    },
+    {
+      "id": "php-intermediate",
+      "name": "22. PHP Intermediate",
+      "nameFa": ". PHP متوسطه",
+      "icon": "Layers",
+      "color": "#777BB4",
+      "description": "OOP, web basics, PDO/MySQL, security, and modern tooling",
+      "descriptionFa": "شیگرایی مبانی وب PDO/MySQL امنیت و ابزارهای مدرن",
+      "order": 22,
+      "technology": "php",
+      "lessons": [
+        {
+          "id": "php-oop-basics",
+          "title": "OOP Basics: Classes, Objects, Interfaces",
+          "titleFa": "مبانی OOP: کلاس شی اینترفیس",
+          "difficulty": "medium",
+          "estimatedTime": "70 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 1
+        },
+        {
+          "id": "php-oop-modern",
+          "title": "Modern PHP 8.x OOP Features",
+          "titleFa": "ویژگیهای مدرن OOP در PHP 8.x",
+          "difficulty": "medium",
+          "estimatedTime": "75 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 2
+        },
+        {
+          "id": "php-http-forms-sessions",
+          "title": "Web Basics: Requests, Forms, Sessions",
+          "titleFa": "مبانی وب: درخواستها فرمها سشن",
+          "difficulty": "medium",
+          "estimatedTime": "70 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 3
+        },
+        {
+          "id": "php-pdo-mysql-security",
+          "title": "PDO + MySQL + Security Basics",
+          "titleFa": "PDO + MySQL + مبانی امنیت",
+          "difficulty": "medium",
+          "estimatedTime": "80 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 4
+        },
+        {
+          "id": "php-composer-psr-testing",
+          "title": "Composer, PSR, Autoloading, Testing",
+          "titleFa": "Composer PSR Autoloading تست",
+          "difficulty": "medium",
+          "estimatedTime": "75 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "php-advanced",
+      "name": "23. PHP Advanced",
+      "nameFa": ". PHP پیشرفته",
+      "icon": "Zap",
+      "color": "#777BB4",
+      "description": "Advanced language features, architecture, testing, and security hardening",
+      "descriptionFa": "ویژگیهای پیشرفته زبان معماری تست و سختسازی امنیت",
+      "order": 23,
+      "technology": "php",
+      "lessons": [
+        {
+          "id": "php-advanced-modern-language",
+          "title": "Advanced PHP: Modern Language & Type-Driven Design",
+          "titleFa": "PHP پیشرفته: ویژگیهای مدرن و طراحی مبتنی بر تایپ",
+          "difficulty": "hard",
+          "estimatedTime": "90 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 1
+        },
+        {
+          "id": "php-advanced-solid-patterns",
+          "title": "Advanced PHP: Architecture, SOLID, and Dependency Injection",
+          "titleFa": "PHP پیشرفته: معماری SOLID و تزریق وابستگی",
+          "difficulty": "hard",
+          "estimatedTime": "100 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 2
+        },
+        {
+          "id": "php-advanced-testing",
+          "title": "Advanced PHP: Testing Strategy (Unit, Integration, DB)",
+          "titleFa": "PHP پیشرفته: استراتژی تست (یونیت یکپارچه دیتابیس)",
+          "difficulty": "hard",
+          "estimatedTime": "95 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 3
+        },
+        {
+          "id": "php-advanced-security-hardening",
+          "title": "Advanced PHP: Security Hardening (Beyond Basics)",
+          "titleFa": "PHP پیشرفته: سختسازی امنیت (فراتر از مبانی)",
+          "difficulty": "hard",
+          "estimatedTime": "110 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 4
+        },
+        {
+          "id": "php-advanced-rest-api-design",
+          "title": "Advanced PHP: REST API Design (Routing, Validation, Errors)",
+          "titleFa": "PHP پیشرفته: طراحی REST API (روتینگ اعتبارسنجی خطاها)",
+          "difficulty": "hard",
+          "estimatedTime": "110 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 5
+        },
+        {
+          "id": "php-advanced-auth-sessions-jwt",
+          "title": "Advanced PHP: Auth (Sessions vs JWT) + Secure Flows",
+          "titleFa": "PHP پیشرفته: احراز هویت (Session در برابر JWT) + جریانهای امن",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 6
+        },
+        {
+          "id": "php-advanced-pdo-patterns",
+          "title": "Advanced PHP: PDO Patterns (Transactions, Concurrency, N+1)",
+          "titleFa": "PHP پیشرفته: الگوهای PDO (تراکنش همزمانی N+1)",
+          "difficulty": "hard",
+          "estimatedTime": "110 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 7
+        },
+        {
+          "id": "php-advanced-caching-opcache",
+          "title": "Advanced PHP: Caching + OPcache + HTTP Cache",
+          "titleFa": "PHP پیشرفته: کش + OPcache + کش HTTP",
+          "difficulty": "hard",
+          "estimatedTime": "90 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 8
+        },
+        {
+          "id": "php-advanced-deployment-production",
+          "title": "Advanced PHP: Deployment & Production Checklist",
+          "titleFa": "PHP پیشرفته: دیپلوی و چکلیست Production",
+          "difficulty": "hard",
+          "estimatedTime": "85 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 9
+        }
+      ]
+    },
+    {
+      "id": "php-wordpress",
+      "name": "24. WordPress (PHP)",
+      "nameFa": ". وردپرس (PHP)",
+      "icon": "Globe",
+      "color": "#777BB4",
+      "description": "Full WordPress development: setup, themes, hooks, and security",
+      "descriptionFa": "توسعه کامل وردپرس: نصب قالب هوکها و امنیت",
+      "order": 24,
+      "technology": "php",
+      "lessons": [
+        {
+          "id": "wp-intro-setup-local",
+          "title": "WordPress Setup: Local Dev + wp-config Basics",
+          "titleFa": "راهاندازی وردپرس: محیط لوکال + مبانی wp-config",
+          "difficulty": "medium",
+          "estimatedTime": "90 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 1
+        },
+        {
+          "id": "wp-theme-anatomy",
+          "title": "WordPress Themes: Anatomy, Templates, and Best Practices",
+          "titleFa": "قالب وردپرس: ساختار قالبها و بهترین روشها",
+          "difficulty": "hard",
+          "estimatedTime": "110 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 2
+        },
+        {
+          "id": "wp-hooks-actions-filters",
+          "title": "WordPress Hooks: Actions vs Filters (Deep Dive)",
+          "titleFa": "هوکهای وردپرس: Action و Filter (پیشرفته)",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 3
+        },
+        {
+          "id": "wp-security",
+          "title": "WordPress Security: Nonces, Capabilities, Sanitization, Escaping",
+          "titleFa": "امنیت وردپرس: nonce دسترسیها sanitize و escape",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "php-laravel",
+      "name": "25. Laravel (PHP)",
+      "nameFa": ". لاراول (PHP)",
+      "icon": "LayoutList",
+      "color": "#FF2D20",
+      "description": "Laravel 12: routing, middleware, validation, Eloquent, API resources, Sanctum auth, and testing",
+      "descriptionFa": "لاراول : مسیربندی middleware اعتبارسنجی Eloquent API Resource احراز هویت Sanctum و تست",
+      "order": 25,
+      "technology": "php",
+      "lessons": [
+        {
+          "id": "laravel-12-intro-setup",
+          "title": "Laravel 12: Intro + Installation + First Run",
+          "titleFa": "لاراول : معرفی + نصب + اجرای اولین پروژه",
+          "difficulty": "medium",
+          "estimatedTime": "75 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 1
+        },
+        {
+          "id": "laravel-project-structure-lifecycle",
+          "title": "Laravel Core: Project Structure + Request Lifecycle + Service Container",
+          "titleFa": "هسته لاراول: ساختار پروژه + چرخه درخواست + Service Container",
+          "difficulty": "hard",
+          "estimatedTime": "95 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 2
+        },
+        {
+          "id": "laravel-routing-middleware",
+          "title": "Laravel Routing: api.php, Route Model Binding, Middleware",
+          "titleFa": "مسیربندی در لاراول: api.php Route Model Binding Middleware",
+          "difficulty": "hard",
+          "estimatedTime": "110 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 3
+        },
+        {
+          "id": "laravel-controllers-requests-validation",
+          "title": "Controllers + Requests + Validation (FormRequest) for APIs",
+          "titleFa": "کنترلر + Request + اعتبارسنجی (FormRequest) برای API",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 4
+        },
+        {
+          "id": "laravel-error-handling-api",
+          "title": "API Error Handling: Exceptions, Validation Errors, Not Found",
+          "titleFa": "مدیریت خطا در API: Exception خطای اعتبارسنجی Not Found",
+          "difficulty": "hard",
+          "estimatedTime": "95 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 5
+        },
+        {
+          "id": "laravel-database-migrations-seeding",
+          "title": "Database: Migrations, Seeders, Factories (Practical Workflow)",
+          "titleFa": "دیتابیس: Migration Seeder Factory (جریان کاری عملی)",
+          "difficulty": "hard",
+          "estimatedTime": "110 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 6
+        },
+        {
+          "id": "laravel-eloquent-models-casts",
+          "title": "Eloquent Models: Mass Assignment, Casts, Accessors, Mutators",
+          "titleFa": "مدلهای Eloquent: Mass Assignment Cast Accessor Mutator",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 7
+        },
+        {
+          "id": "laravel-eloquent-relationships",
+          "title": "Eloquent Relationships: One-to-Many, Many-to-Many, Polymorphic",
+          "titleFa": "روابط Eloquent: یکبهچند چندبهچند Polymorphic",
+          "difficulty": "hard",
+          "estimatedTime": "140 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 8
+        },
+        {
+          "id": "laravel-eloquent-performance",
+          "title": "Eloquent Performance: N+1, Indexes, Pagination, Query Debugging",
+          "titleFa": "کارایی Eloquent: N+1 ایندکس Pagination دیباگ Query",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 9
+        },
+        {
+          "id": "laravel-api-resources-pagination",
+          "title": "API Resources + Pagination: Stable JSON Shapes",
+          "titleFa": "API Resource + Pagination: خروجی JSON پایدار",
+          "difficulty": "hard",
+          "estimatedTime": "110 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 10
+        },
+        {
+          "id": "laravel-auth-sanctum",
+          "title": "Auth for APIs: Laravel Sanctum (Tokens, SPA Patterns)",
+          "titleFa": "احراز هویت برای API: Laravel Sanctum (توکن الگوی SPA)",
+          "difficulty": "hard",
+          "estimatedTime": "140 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 11
+        },
+        {
+          "id": "laravel-testing-apis",
+          "title": "Testing Laravel APIs: Feature Tests, Factories, Auth",
+          "titleFa": "تست API در لاراول: Feature Test Factory Auth",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 12
+        },
+        {
+          "id": "laravel-authorization-policies-gates",
+          "title": "Authorization: Gates, Policies, and Role/Permission Patterns",
+          "titleFa": "مجوزدهی: Gate Policy و الگوهای نقش/دسترسی",
+          "difficulty": "hard",
+          "estimatedTime": "140 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 13
+        },
+        {
+          "id": "laravel-security-hardening",
+          "title": "Security Hardening: CSRF/CORS, Encryption, Uploads, Rate Limiting",
+          "titleFa": "سختسازی امنیت: CSRF/CORS رمزنگاری آپلود Rate Limiting",
+          "difficulty": "hard",
+          "estimatedTime": "160 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 14
+        },
+        {
+          "id": "laravel-queues-jobs",
+          "title": "Queues & Jobs: Async Work, Retries, Failed Jobs, Idempotency",
+          "titleFa": "صف و Job: کارهای async retry failed job idempotency",
+          "difficulty": "hard",
+          "estimatedTime": "150 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 15
+        },
+        {
+          "id": "laravel-scheduling",
+          "title": "Task Scheduling: Cron + Laravel Scheduler + Production Patterns",
+          "titleFa": "زمانبندی وظایف: Cron + Scheduler لاراول + الگوهای production",
+          "difficulty": "hard",
+          "estimatedTime": "120 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 16
+        },
+        {
+          "id": "laravel-events-listeners",
+          "title": "Events & Listeners: Decoupling, Domain Events, Async Listeners",
+          "titleFa": "Event و Listener: جداسازی Domain Event اجرای async",
+          "difficulty": "hard",
+          "estimatedTime": "130 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 17
+        },
+        {
+          "id": "laravel-notifications-mail",
+          "title": "Notifications + Mail: Email, SMS, Database, Queued Delivery",
+          "titleFa": "Notification و Mail: ایمیل، SMS، دیتابیس، ارسال با صف",
+          "difficulty": "hard",
+          "estimatedTime": "240 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 18
+        },
+        {
+          "id": "laravel-storage-uploads",
+          "title": "Storage + Uploads: Filesystem Disks, Signed URLs, Secure Uploads",
+          "titleFa": "Storage و Upload: diskها، لینک امضاشده، آپلود امن",
+          "difficulty": "hard",
+          "estimatedTime": "240 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 19
+        },
+        {
+          "id": "laravel-caching-performance",
+          "title": "Caching + Performance: Cache Drivers, Keys, Invalidation, Locks",
+          "titleFa": "کش و کارایی: Driverها، کلیدها، invalidation، قفل",
+          "difficulty": "hard",
+          "estimatedTime": "250 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 20
+        },
+        {
+          "id": "laravel-http-client-integrations",
+          "title": "HTTP Client Integrations: Retries, Timeouts, Auth, Webhooks",
+          "titleFa": "اتصال به سرویس ها با HTTP Client: timeout، retry، auth، webhook",
+          "difficulty": "hard",
+          "estimatedTime": "260 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 21
+        },
+        {
+          "id": "laravel-deployment-production",
+          "title": "Deployment + Production: Config Cache, Queues, Supervisor, Zero Downtime",
+          "titleFa": "دیپلوی و Production: کش کانفیگ، صف ها، supervisor، بدون downtime",
+          "difficulty": "hard",
+          "estimatedTime": "280 min",
+          "hasVisualization": false,
+          "hasExercise": false,
+          "order": 22
         }
       ]
     }

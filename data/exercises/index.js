@@ -47,6 +47,13 @@ import { backtrackingExercise } from './backtracking';
 import { topKProblemsExercise } from './top-k-problems';
 import { binarySearchVariationsExercise } from './binary-search-variations';
 import { problemSolvingApproachExercise } from './problem-solving-approach';
+import {
+  nodejsConnectionExercises,
+  sqlQueriesExercises,
+  joinsExercises,
+  databaseDesignExercises,
+  securityExercises,
+} from './database-fundamentals';
 
 export const exercises = {
   'bubble-sort': bubbleSortExercise,
@@ -98,6 +105,11 @@ export const exercises = {
   'top-k-problems': topKProblemsExercise,
   'binary-search-variations': binarySearchVariationsExercise,
   'problem-solving-approach': problemSolvingApproachExercise,
+  'nodejs-connection-exercises': nodejsConnectionExercises,
+  'sql-queries-exercises': sqlQueriesExercises,
+  'joins-exercises': joinsExercises,
+  'database-design-exercises': databaseDesignExercises,
+  'security-exercises': securityExercises,
 };
 
 export function getExercise(exerciseId) {

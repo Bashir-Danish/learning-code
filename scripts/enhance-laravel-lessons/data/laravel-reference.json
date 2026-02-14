@@ -1,0 +1,104 @@
+{
+  "laravel11Changes": [
+    {
+      "feature": "Application Structure",
+      "description": "Streamlined application structure with fewer default files",
+      "details": "Laravel 11 removes several default files and middleware, making the initial structure cleaner"
+    },
+    {
+      "feature": "API Routes",
+      "description": "API routes are now optional and not included by default",
+      "details": "You need to explicitly install API routes using php artisan install:api"
+    },
+    {
+      "feature": "Service Providers",
+      "description": "Simplified service provider registration",
+      "details": "AppServiceProvider is now the primary service provider, others are optional"
+    },
+    {
+      "feature": "Middleware",
+      "description": "Reduced default middleware",
+      "details": "Many middleware are now optional and can be added as needed"
+    },
+    {
+      "feature": "Application Builder",
+      "description": "New application builder pattern",
+      "details": "bootstrap/app.php now uses a fluent builder pattern for configuration"
+    }
+  ],
+  "laravel12Changes": [
+    {
+      "feature": "Maintenance Release",
+      "description": "Laravel 12 is a minimal-breaking maintenance release",
+      "details": "Focused on dependency updates and stability improvements"
+    },
+    {
+      "feature": "PHP 8.4 Support",
+      "description": "Full support for PHP 8.4",
+      "details": "Updated dependencies to work with PHP 8.4 features"
+    },
+    {
+      "feature": "Starter Kits",
+      "description": "Enhanced starter kits and scaffolding",
+      "details": "Improved Breeze and Jetstream with better defaults"
+    }
+  ],
+  "commonMistakes": {
+    "general": [
+      {
+        "mistake": "Not configuring database in .env",
+        "why": "Application cannot connect to database without proper credentials",
+        "correctApproach": "Always configure DB_CONNECTION, DB_DATABASE, DB_USERNAME, and DB_PASSWORD in .env file"
+      },
+      {
+        "mistake": "Not generating application key",
+        "why": "Laravel uses APP_KEY for encryption and sessions",
+        "correctApproach": "Run php artisan key:generate after installation"
+      },
+      {
+        "mistake": "Mixing dev dependencies into production",
+        "why": "Increases deployment size and potential security risks",
+        "correctApproach": "Use composer install --no-dev in production"
+      },
+      {
+        "mistake": "Committing .env file to version control",
+        "why": "Exposes sensitive credentials and environment-specific configuration",
+        "correctApproach": "Keep .env in .gitignore, use .env.example as template"
+      },
+      {
+        "mistake": "Not using environment variables for sensitive data",
+        "why": "Hardcoded credentials are security risks",
+        "correctApproach": "Always use env() helper for sensitive configuration"
+      }
+    ]
+  },
+  "bestPractices": {
+    "general": [
+      {
+        "title": "Use Environment Variables",
+        "description": "Store all environment-specific and sensitive configuration in .env",
+        "reasoning": "Keeps configuration separate from code, improves security"
+      },
+      {
+        "title": "Follow PSR-12 Coding Standards",
+        "description": "Use consistent code formatting and naming conventions",
+        "reasoning": "Improves code readability and maintainability"
+      },
+      {
+        "title": "Use Eloquent ORM",
+        "description": "Prefer Eloquent over raw SQL queries",
+        "reasoning": "Provides security (SQL injection protection), readability, and maintainability"
+      },
+      {
+        "title": "Implement Proper Error Handling",
+        "description": "Use try-catch blocks and return appropriate HTTP status codes",
+        "reasoning": "Provides better user experience and easier debugging"
+      },
+      {
+        "title": "Write Tests",
+        "description": "Write feature and unit tests for critical functionality",
+        "reasoning": "Catches bugs early, enables confident refactoring"
+      }
+    ]
+  }
+}

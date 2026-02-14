@@ -8,6 +8,8 @@ export const TECHNOLOGIES = [
     { id: 'vue', name: 'Vue.js', icon: 'Code', color: '#42B883' },
     { id: 'node', name: 'Node.js', icon: 'Server', color: '#339933' },
     { id: 'flutter', name: 'Flutter', icon: 'Smartphone', color: '#02569B' },
+    { id: 'database', name: 'Database', icon: 'Database', color: '#0EA5E9' },
+    { id: 'php', name: 'PHP', icon: 'Code2', color: '#777BB4' },
 ];
 
 export function TechnologyProvider({ children }) {

@@ -49,13 +49,18 @@ export default function MarkdownRenderer({ content, className = '', isRTL = fals
 
             if (language && langMap[language]) language = langMap[language];
 
-            // If it's a fenced block (not inline) render with SyntaxHighlighter.
-            // If language is missing, fall back to 'markup' to ensure highlighting.
-            if (!inline) {
+            const codeStr = String(children);
+            const looksLikeBlock =
+              inline === false ||
+              Boolean(language) ||
+              /\n/.test(codeStr);
+
+            // Only render SyntaxHighlighter for real code blocks.
+            // Inline backticks inside headings/lists sometimes come through with inline=undefined.
+            if (looksLikeBlock) {
               let usedLang = language || 'markup';
 
               // If the block is a Vue SFC / HTML that contains a <script> tag, prefer JS highlighting
-              const codeStr = String(children);
               if (usedLang === 'markup' && /<script[\s>]/i.test(codeStr)) {
                 usedLang = 'javascript';
               }
@@ -68,14 +73,14 @@ export default function MarkdownRenderer({ content, className = '', isRTL = fals
                   customStyle={{ direction: 'ltr', textAlign: 'left' }}
                   {...props}
                 >
-                  {String(children).replace(/\n$/, '')}
+                  {codeStr.replace(/\n$/, '')}
                 </SyntaxHighlighter>
               );
             }
 
             return (
               <code
-                className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-pink-600"
+                className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-pink-600 inline"
                 dir="ltr"
                 {...props}
               >
