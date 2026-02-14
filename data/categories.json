@@ -1273,14 +1273,193 @@
       ]
     },
     {
+      "id": "database-basics",
+      "name": "21. Database Basics (MySQL/MariaDB)",
+      "nameFa": "۲۱. مبانی دیتابیس (MySQL/MariaDB)",
+      "icon": "Database",
+      "color": "#0EA5E9",
+      "description": "Database setup and server basics for MySQL/MariaDB + how apps connect",
+      "descriptionFa": "راه اندازی و مبانی سرور MySQL/MariaDB + اتصال اپلیکیشن",
+      "order": 21,
+      "technology": "database",
+      "lessons": [
+        {
+          "id": "mysql-server-basics",
+          "title": "MySQL Server Basics",
+          "titleFa": "مبانی MySQL Server",
+          "difficulty": "easy",
+          "estimatedTime": "60 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "mariadb-server-basics",
+          "title": "MariaDB Server Basics",
+          "titleFa": "مبانی MariaDB Server",
+          "difficulty": "easy",
+          "estimatedTime": "55 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "nodejs-mysql-connection",
+          "title": "Node.js + MySQL Connection",
+          "titleFa": "اتصال Node.js به MySQL",
+          "difficulty": "medium",
+          "estimatedTime": "65 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "sql-fundamentals",
+      "name": "22. SQL Fundamentals",
+      "nameFa": "۲۲. مبانی SQL",
+      "icon": "Database",
+      "color": "#0EA5E9",
+      "description": "Core SQL for real projects: SELECT, write queries, joins, and aggregates",
+      "descriptionFa": "SQL برای پروژه واقعی: SELECT، نوشتن داده، join و توابع تجمیعی",
+      "order": 22,
+      "technology": "database",
+      "lessons": [
+        {
+          "id": "sql-select-queries",
+          "title": "SQL SELECT Queries",
+          "titleFa": "کوئری های SELECT",
+          "difficulty": "easy",
+          "estimatedTime": "70 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "sql-insert-update-delete",
+          "title": "INSERT / UPDATE / DELETE",
+          "titleFa": "INSERT / UPDATE / DELETE",
+          "difficulty": "easy",
+          "estimatedTime": "65 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "sql-joins",
+          "title": "SQL Joins",
+          "titleFa": "Join در SQL",
+          "difficulty": "medium",
+          "estimatedTime": "75 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "sql-aggregate-functions",
+          "title": "Aggregates (COUNT, SUM, GROUP BY)",
+          "titleFa": "توابع تجمیعی و GROUP BY",
+          "difficulty": "medium",
+          "estimatedTime": "70 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 4
+        },
+        {
+          "id": "sql-advanced-queries",
+          "title": "Advanced SQL Queries",
+          "titleFa": "کوئری های پیشرفته SQL",
+          "difficulty": "hard",
+          "estimatedTime": "90 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "database-design-performance",
+      "name": "23. Database Design & Performance",
+      "nameFa": "۲۳. طراحی دیتابیس و کارایی",
+      "icon": "Database",
+      "color": "#0EA5E9",
+      "description": "Schema design, relationships, indexes, normalization, security, and optimization",
+      "descriptionFa": "طراحی schema، روابط، ایندکس، نرمال سازی، امنیت و بهینه سازی",
+      "order": 23,
+      "technology": "database",
+      "lessons": [
+        {
+          "id": "database-design-tables",
+          "title": "Database Design & Tables",
+          "titleFa": "طراحی دیتابیس و جدول ها",
+          "difficulty": "medium",
+          "estimatedTime": "80 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 1
+        },
+        {
+          "id": "database-relationships",
+          "title": "Relationships (1:1, 1:N, N:N)",
+          "titleFa": "روابط (۱:۱، ۱:N، N:N)",
+          "difficulty": "medium",
+          "estimatedTime": "80 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 2
+        },
+        {
+          "id": "database-indexes",
+          "title": "Indexes",
+          "titleFa": "ایندکس ها",
+          "difficulty": "hard",
+          "estimatedTime": "80 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 3
+        },
+        {
+          "id": "database-normalization",
+          "title": "Normalization",
+          "titleFa": "نرمال سازی",
+          "difficulty": "hard",
+          "estimatedTime": "75 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 4
+        },
+        {
+          "id": "sql-security-best-practices",
+          "title": "SQL Security Best Practices",
+          "titleFa": "بهترین روش های امنیت SQL",
+          "difficulty": "hard",
+          "estimatedTime": "85 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 5
+        },
+        {
+          "id": "query-optimization",
+          "title": "Query Optimization",
+          "titleFa": "بهینه سازی کوئری",
+          "difficulty": "hard",
+          "estimatedTime": "90 min",
+          "hasVisualization": false,
+          "hasExercise": true,
+          "order": 6
+        }
+      ]
+    },
+    {
       "id": "php-fundamentals",
-      "name": "21. PHP Fundamentals",
+      "name": "24. PHP Fundamentals",
       "nameFa": ". مبانی PHP",
       "icon": "BookOpen",
       "color": "#777BB4",
       "description": "Setup, language basics, functions, arrays/strings, errors, files/JSON, and PHP 8.4 highlights",
       "descriptionFa": "راهاندازی مبانی زبان توابع آرایه/رشته خطاها فایل/JSON و نکات PHP 8.4",
-      "order": 21,
+      "order": 24,
       "technology": "php",
       "lessons": [
         {
@@ -1367,13 +1546,13 @@
     },
     {
       "id": "php-intermediate",
-      "name": "22. PHP Intermediate",
+      "name": "25. PHP Intermediate",
       "nameFa": ". PHP متوسطه",
       "icon": "Layers",
       "color": "#777BB4",
       "description": "OOP, web basics, PDO/MySQL, security, and modern tooling",
       "descriptionFa": "شیگرایی مبانی وب PDO/MySQL امنیت و ابزارهای مدرن",
-      "order": 22,
+      "order": 25,
       "technology": "php",
       "lessons": [
         {
@@ -1430,69 +1609,69 @@
     },
     {
       "id": "php-advanced",
-      "name": "23. PHP Advanced",
+      "name": "26. PHP Advanced",
       "nameFa": ". PHP پیشرفته",
       "icon": "Zap",
       "color": "#777BB4",
-      "description": "Advanced language features, architecture, testing, and security hardening",
-      "descriptionFa": "ویژگیهای پیشرفته زبان معماری تست و سختسازی امنیت",
-      "order": 23,
+      "description": "Modern PHP features, architecture, testing, security hardening, APIs, and production",
+      "descriptionFa": "قابلیتهای مدرن معماری تست امنیت API و production",
+      "order": 26,
       "technology": "php",
       "lessons": [
         {
           "id": "php-advanced-modern-language",
-          "title": "Advanced PHP: Modern Language & Type-Driven Design",
-          "titleFa": "PHP پیشرفته: ویژگیهای مدرن و طراحی مبتنی بر تایپ",
+          "title": "Modern PHP: Language Features + Type-Driven Design",
+          "titleFa": "PHP مدرن: قابلیتهای زبان + طراحی type محور",
           "difficulty": "hard",
-          "estimatedTime": "90 min",
+          "estimatedTime": "120 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 1
         },
         {
           "id": "php-advanced-solid-patterns",
-          "title": "Advanced PHP: Architecture, SOLID, and Dependency Injection",
-          "titleFa": "PHP پیشرفته: معماری SOLID و تزریق وابستگی",
+          "title": "SOLID + Patterns + Dependency Injection",
+          "titleFa": "SOLID + الگوها + Dependency Injection",
           "difficulty": "hard",
-          "estimatedTime": "100 min",
+          "estimatedTime": "120 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 2
         },
         {
           "id": "php-advanced-testing",
-          "title": "Advanced PHP: Testing Strategy (Unit, Integration, DB)",
-          "titleFa": "PHP پیشرفته: استراتژی تست (یونیت یکپارچه دیتابیس)",
+          "title": "Testing: Unit/Integration, Mocks, and Database Tests",
+          "titleFa": "تست: Unit/Integration موک و تست دیتابیس",
           "difficulty": "hard",
-          "estimatedTime": "95 min",
+          "estimatedTime": "110 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 3
         },
         {
           "id": "php-advanced-security-hardening",
-          "title": "Advanced PHP: Security Hardening (Beyond Basics)",
-          "titleFa": "PHP پیشرفته: سختسازی امنیت (فراتر از مبانی)",
+          "title": "Security Hardening: Input, Auth, Cookies, and Headers",
+          "titleFa": "سختسازی امنیت: ورودی auth کوکی و header",
           "difficulty": "hard",
-          "estimatedTime": "110 min",
+          "estimatedTime": "120 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 4
         },
         {
           "id": "php-advanced-rest-api-design",
-          "title": "Advanced PHP: REST API Design (Routing, Validation, Errors)",
-          "titleFa": "PHP پیشرفته: طراحی REST API (روتینگ اعتبارسنجی خطاها)",
+          "title": "REST API Design: Versioning, Validation, Errors",
+          "titleFa": "طراحی REST API: نسخه بندی اعتبارسنجی خطا",
           "difficulty": "hard",
-          "estimatedTime": "110 min",
+          "estimatedTime": "130 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 5
         },
         {
           "id": "php-advanced-auth-sessions-jwt",
-          "title": "Advanced PHP: Auth (Sessions vs JWT) + Secure Flows",
-          "titleFa": "PHP پیشرفته: احراز هویت (Session در برابر JWT) + جریانهای امن",
+          "title": "Auth: Sessions vs JWT (Security + Patterns)",
+          "titleFa": "احراز هویت: Session در مقابل JWT",
           "difficulty": "hard",
           "estimatedTime": "120 min",
           "hasVisualization": false,
@@ -1501,30 +1680,30 @@
         },
         {
           "id": "php-advanced-pdo-patterns",
-          "title": "Advanced PHP: PDO Patterns (Transactions, Concurrency, N+1)",
-          "titleFa": "PHP پیشرفته: الگوهای PDO (تراکنش همزمانی N+1)",
+          "title": "PDO Patterns: Transactions, Concurrency, N+1",
+          "titleFa": "الگوهای PDO: تراکنش همروندی N+1",
           "difficulty": "hard",
-          "estimatedTime": "110 min",
+          "estimatedTime": "120 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 7
         },
         {
           "id": "php-advanced-caching-opcache",
-          "title": "Advanced PHP: Caching + OPcache + HTTP Cache",
-          "titleFa": "PHP پیشرفته: کش + OPcache + کش HTTP",
+          "title": "Caching: OPcache, HTTP Cache, and Application Cache",
+          "titleFa": "کش: OPcache کش HTTP و کش برنامه",
           "difficulty": "hard",
-          "estimatedTime": "90 min",
+          "estimatedTime": "110 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 8
         },
         {
           "id": "php-advanced-deployment-production",
-          "title": "Advanced PHP: Deployment & Production Checklist",
-          "titleFa": "PHP پیشرفته: دیپلوی و چکلیست Production",
+          "title": "Deployment + Production Checklist",
+          "titleFa": "دیپلوی و چک لیست production",
           "difficulty": "hard",
-          "estimatedTime": "85 min",
+          "estimatedTime": "110 min",
           "hasVisualization": false,
           "hasExercise": false,
           "order": 9
@@ -1533,18 +1712,18 @@
     },
     {
       "id": "php-wordpress",
-      "name": "24. WordPress (PHP)",
+      "name": "27. WordPress (PHP)",
       "nameFa": ". وردپرس (PHP)",
       "icon": "Globe",
-      "color": "#777BB4",
-      "description": "Full WordPress development: setup, themes, hooks, and security",
-      "descriptionFa": "توسعه کامل وردپرس: نصب قالب هوکها و امنیت",
-      "order": 24,
+      "color": "#21759B",
+      "description": "WordPress development: setup, themes, hooks, and security",
+      "descriptionFa": "توسعه وردپرس: نصب theme hook و امنیت",
+      "order": 27,
       "technology": "php",
       "lessons": [
         {
           "id": "wp-intro-setup-local",
-          "title": "WordPress Setup: Local Dev + wp-config Basics",
+          "title": "WordPress Local Setup + wp-config Basics",
           "titleFa": "راهاندازی وردپرس: محیط لوکال + مبانی wp-config",
           "difficulty": "medium",
           "estimatedTime": "90 min",
@@ -1586,13 +1765,13 @@
     },
     {
       "id": "php-laravel",
-      "name": "25. Laravel (PHP)",
+      "name": "28. Laravel (PHP)",
       "nameFa": ". لاراول (PHP)",
       "icon": "LayoutList",
       "color": "#FF2D20",
       "description": "Laravel 12: routing, middleware, validation, Eloquent, API resources, Sanctum auth, and testing",
       "descriptionFa": "لاراول : مسیربندی middleware اعتبارسنجی Eloquent API Resource احراز هویت Sanctum و تست",
-      "order": 25,
+      "order": 28,
       "technology": "php",
       "lessons": [
         {

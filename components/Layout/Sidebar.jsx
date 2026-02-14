@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom';
 import {
   BookOpen,
+  Database,
   LayoutList,
   Hash,
   Link,
@@ -29,7 +30,7 @@ import categoriesData from '../../data/categories.json';
 
 const iconMap = {
   BookOpen, LayoutList, Hash, Link, Layers, ArrowUpDown,
-  Search, Repeat, GitBranch, Triangle, Share2, Zap, Binary,
+  Search, Repeat, GitBranch, Triangle, Share2, Zap, Binary, Database,
 };
 
 export default function Sidebar({ isOpen, onClose }) {
@@ -235,7 +236,6 @@ export default function Sidebar({ isOpen, onClose }) {
                               {isRTL ? lesson.titleFa : lesson.title}
                             </span>
 
-                            {/* Difficulty Badges */}
                             {lesson.difficulty === 'hard' && (
                               <span className="text-[9px] px-1.5 py-0.5 bg-red-100 text-red-600 rounded-md font-bold uppercase tracking-tighter">
                                 {t('Hard', 'سخت')}
